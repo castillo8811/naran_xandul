@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function related_nodes_theme($existing, $type, $theme, $path)
+{
+    return [
+        'related_nodes' => [
+            'variables' => [
+                'nodes' => NULL,
+            ],
+        ],
+    ];
+
+}
+
+
+function get_related_nodes(){
+    $nodes=[];
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $related_item=$node->get('field_related_nodes')->getValue();
+        foreach($related_item as $item){
+            $node_related=node_load($item['target_id']);
+            if($node_related){
+              $nodes[]=[
+                  'id'=>$node_related->id(),
+                  'title'=>$node_related->getTitle(),
+                  'url' =>Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node_related->id()),
+                  'image'=>file_create_url($node->get('field_image')->entity->uri->value),
+                  'type'=>$node_related->getType(),
+                  'multimedia'=>$node_related->get('field_multimedia')->getValue(),
+                ];
+            }
+        }
+
+        return $nodes;
+    }else{
+        return [];
+    }
+}

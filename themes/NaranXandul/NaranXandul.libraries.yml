@@ -1,0 +1,12 @@
+global-styling:
+  css:
+    theme:
+      css/slick.css: {}
+      css/slick-theme.css: {}
+      css/helpers.css: {}
+      css/style.css: {}
+      css/responsive.css: {}
+  js:
+      js/jquery.sticky.js: {}
+      js/slick.min.js: {}
+      js/script.js: {}

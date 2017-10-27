@@ -1,0 +1,21 @@
+<div id="bios" class="pink pall10 mt10">
+  <div>
+  <div class="block PN3r0 text-bold ml10 text-upper bios-title">
+    <span class="text-white">Biografías</span><span class="text-yellow"> Más </span><span class="text-white">Recientes</span>
+  </div>
+  {% for row in rows %}
+    {%
+    set row_classes = [
+    default_row_class ? 'views-row',
+    'panel',
+    'panel-default',
+    ]
+    %}
+
+    <div class="nodeListItem col-md-4 col-sm-6 col-xs-12">
+      {{ row.content }}
+    </div>
+  {% endfor %}
+  </div>
+  <div class="clear"></div>
+</div>

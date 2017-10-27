@@ -1,0 +1,18 @@
+<div class="more-news">
+  {% for row in rows %}
+    {%
+    set row_classes = [
+    default_row_class ? 'views-row',
+    'panel',
+    'panel-default',
+    ]
+    %}
+
+    <div class="nodeListItem col-md-4 col-sm-6 col-xs-12">
+      <div class="nodeListItemInner">
+        {{ row.content }}
+      </div>
+    </div>
+  {% endfor %}
+  <div class="clear"></div>
+</div>

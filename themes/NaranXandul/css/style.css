@@ -1,0 +1,717 @@
+a {
+    text-decoration: none !important;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+#navbar {
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 1000 !important;
+    border: none;
+}
+
+.navbar-brand {
+    height: 60px;
+    padding: 5px 0px;
+}
+
+#navbar-sticky-wrapper {
+    background-color: black;
+}
+
+ul.menu {
+    width: 75%;
+}
+
+.navbar-nav > li {
+    margin: 0 7% 0 0;
+}
+
+.navbar-nav > li a {
+    color: #FFF !important;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#envivo {
+    background-color: darkred;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.envivo-text {
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+    padding: 5px;
+}
+
+.envivo-text a {
+    color: white;
+}
+
+#stage {
+    background-color: dodgerblue;
+    color: black;
+    padding: 10px;
+    font-size: 2.3rem;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 1px 2px 3px lightgrey;
+}
+
+#stage .nodelist-audiolink {
+    width: 25%;
+    float: right;
+}
+
+#stage .nodelist-audiolink a {
+    color: white;
+}
+
+#stage .nodelist-title {
+    font-size: 2.5rem !important;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+#stage .nodelist-title a {
+    font-size: 2.8rem !important;
+    color: white;
+}
+
+#stage .stageInner .col-md-12 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+#stage .stageInner .col-xs-2 {
+    width: 35%;
+}
+
+#stage .stageInner .col-xs-10 {
+    width: 45%;
+}
+
+#stage .nodelist-audiolink {
+    width: 25%;
+    float: right;
+}
+
+.nodeListItem {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.nodeListItem:hover {
+    background-color: lightgray;
+    opacity: .8;
+}
+
+.nodeListItem:hover .nodelist-audiolink {
+    color: black;
+}
+
+.nodeListItemInner {
+    box-shadow: 1px 2px 3px lightgrey;
+    padding: 5px;
+    min-height: 200px;
+    position: relative;
+    border: solid 1px lightgray;
+}
+
+.nodelist-title {
+    min-height: 60px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.nodelist-title a {
+    color: #666666;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.8rem !important;
+}
+
+.nodelist-autor a {
+    font-size: 1.5rem;
+    color: black;
+    display: block;
+    font-weight: bold;
+}
+
+.conductor-info {
+    margin-bottom: 50px;
+}
+
+.conductor-item img {
+    height: 45px !important;
+    width: 50px !important;
+    border-radius: 50%;
+}
+
+.programa a {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.conductor-name a, .condictor-name a {
+    color: dimgray;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.nodelist-autor .node-autor-name a, .conductor-name a {
+    color: dimgray;
+    font-weight: normal;
+}
+
+.nodelist-audiolink {
+    background-color: red;
+    width: 70%;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+    clear: both;
+}
+
+.nodelist-audiolink a {
+    color: white;
+}
+
+.nodeListItem .nodelist-audiolink {
+    bottom: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#newsletter-subscription {
+    background-color: darkred;
+    color: white;
+}
+
+#newsletter-subscription .form-item {
+    float: left;
+    width: 40%;
+}
+
+.form-item-mergevars-email label {
+    display: none;
+}
+
+.form-item-mergevars-fname, .form-item-mergevars-lname {
+    display: none;
+}
+
+.form-submit {
+    width: 220px;
+    background-color: #0E5EA9;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#mailchimp-signup-subscribe-block-NaranXandul-mc-form-error-message {
+    display: block;
+    clear: both;
+    font-weight: bolder;
+}
+
+#block-NaranXandul-footer ul {
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+    padding: 10px 0 10px 0;
+}
+
+#block-NaranXandul-footer ul li {
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 0;
+    font-weight: bold;
+}
+
+.field--name-user-picture img {
+    border-radius: 50%;
+}
+
+#bios .nodelist-title a {
+    color: #FFF;
+}
+
+#footer-brand {
+    height: 55px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+}
+
+#footer-brand .navbar-brand {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    float: none;
+}
+
+#footer-brand img {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#footer-brand-inner {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#footer-brand-inner span {
+    padding: 15px;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+#footer-spotify {
+    height: 50px;
+    background-color: darkred;
+    padding: 5px;
+}
+
+#foot-year {
+    padding: 20px;
+    color: white;
+}
+
+.footer {
+    margin-top: 0px !important;
+    padding-top: 10px !important;
+    border: none !important;
+    padding-bottom: 0 !important;
+}
+
+.page-header {
+    padding: 0 !important;
+    border-bottom: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold
+}
+
+.well {
+    min-height: 20px;
+    padding: 0px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.sidebar-second {
+    padding: 20px 0 0 0 !important;
+}
+
+.region-content {
+    padding-right: 5px;
+}
+
+.path-contact h1 {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.path-contact .form-actions {
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+}
+
+.path-contact #edit-submit {
+    background-color: red;
+    border: none;
+    font-size: 2rem;
+    width: 33% !important;
+    margin: 0 auto;
+    display: block;
+}
+
+.path-contact #edit-preview {
+    background-color: orange;
+    border: none;
+    font-size: 2rem;
+    display: none;
+}
+
+.path-contact .btn {
+    margin-top: 10px;
+    width: 150px !important;
+}
+
+.fb-widget-head {
+    background: navy;
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.tw-widget-head {
+    background: deepskyblue;
+    color: white;
+    font-size: 2.5rem;
+    margin: 0 10px 0 0;
+    text-align: center;
+}
+
+.pager__item .button {
+    background-color: orange;
+    color: white;
+    padding: 10px 100px 10px 100px;
+    font-weight: bold;
+    border: solid lightgrey;
+}
+
+.node-date {
+    float: right;
+    padding-right: 10px;
+}
+
+.node-author-section {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.node-author-section-inner {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.node-author-section-inner img {
+    width: 70px;
+    margin-right: 15px;
+}
+
+.field--name-field-programa a {
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: dimgray;
+}
+
+.field--name-field-conductor a {
+    color: #000;
+}
+
+.node-title {
+    text-align: center;
+    color: #000;
+}
+
+.node-article-wrapper {
+    padding-right: 10px;
+}
+
+.node-body img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.related_nodes-title {
+    font-size: 3rem;
+}
+
+.related_nodes ul li {
+    padding: 10px 0 10px 0;
+}
+
+.related_nodes ul {
+    color: deepskyblue;
+}
+
+.related_nodes ul li a {
+    color: deepskyblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.newsletter-logo {
+    width: 20%;
+    display: inline-block;
+}
+
+.newsletter-title {
+    display: inline-block;
+    width: 73%;
+    top: 17px;
+    position: absolute;
+    font-size: 2.5rem;
+}
+
+.newsletter-conditions {
+    font-size: 1.5rem;
+}
+
+.view-display-id-more_news_home {
+    margin-top: 30px;
+}
+
+.contact-message-feedback-form label {
+    display: none;
+}
+
+.footer-spotify-inner {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#footer-spotify a {
+    color: white;
+    font-size: 2rem;
+    margin-top: 2%;
+    text-decoration: none;
+}
+
+#footer-social {
+    background-color: lightgrey;
+    color: dimgray !important;
+    padding-top: 10px;
+}
+
+#footer-social h3 {
+    margin: 0 !important;
+}
+
+#footer-social ul {
+    width: 36%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#footer-social ul li {
+    display: inline-block;
+    padding: 8px;
+}
+
+.node-body iframe {
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 20px;
+}
+
+#mailchimp-signup-subscribe-block-NaranXandul-form label {
+    display: none;
+}
+
+#mailchimp-signup-subscribe-block-NaranXandul-form input[type="email"] {
+    width: 66%;
+    margin: 0 auto;
+    border: solid 1px lightgray;
+    border-radius: 0px;
+    color: #666666;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.8rem
+}
+
+#mailchimp-signup-subscribe-block-NaranXandul-form .form-submit {
+    background-color: darkorange;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    width: 66%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+#newsletter-subscription .message {
+    text-align: center;
+    display: block;
+    color: orange;
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+#mailchimp-signup-subscribe-block-NaranXandul-form-error-message {
+    text-align: center;
+    display: block;
+    color: red;
+    margin-bottom: 10px;
+}
+
+#edit-preview {
+    display: none;
+}
+
+#player-logo {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 1px;
+    left: -2px;
+}
+
+#player-logo img {
+    width: 62px;
+    height: auto;
+}
+
+#social-shares {
+    height: 50px;
+    left: 0;
+    right: 0;
+    z-index: 1000 !important;
+    margin-bottom: 10px;
+}
+
+#social-shares-inner {
+    margin: 0 auto;
+    float: none;
+}
+
+#social-shares-inner img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+#fb-share {
+    width: 33%;
+    height: 50px;
+    background-color: darkblue;
+    background: darkblue url(../images/btn_share_facebook.png) no-repeat;
+    background-position: center;
+    float: left;
+}
+
+#tw-share {
+    width: 33%;
+    height: 50px;
+    background-color: deepskyblue;
+    background: deepskyblue url(../images/btn_share_twitter.png) no-repeat;
+    background-position: center;
+    float: left;
+}
+
+#email-share {
+    width: 33%;
+    height: 50px;
+    background-color: darkred;
+    float: left;
+}
+
+#whatsapp-share {
+    width: 33%;
+    height: 50px;
+    background-color: darkgreen;
+    background: darkgreen url(../images/btn_share_whats_app.png) no-repeat;
+    background-position: center;
+    float: left;
+}
+
+#social-shares a {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+}
+
+.node-head-text {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+    list-style: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 0 !important;
+    padding: 0 !important;
+}
+
+#newsletter-subscription .banner {
+    max-height: 250px !important;
+    overflow: hidden;
+}
+
+.radioListItem {
+    border-bottom: solid 2px lightgrey;
+    padding-bottom: 19px;
+}
+
+.radio-image {
+    border: solid 1px dimgrey;
+    padding: 2px;
+    width: 100px;
+    height: 100px;
+}
+
+.radio-info {
+    margin: 0 0 0 6px;
+}
+
+.radio-info h3 {
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 2rem;
+}
+
+.radio-info span {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    display: block;
+}
+
+.radio-info a {
+    color: black;
+}
+
+#block-naranxandul-piedepagina ul {
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+    padding: 10px 0 10px 0;
+    width: 100%;
+}
+
+#block-naranxandul-piedepagina ul li {
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 0;
+    font-weight: bold;
+}
+
+#block-naranxandul-piedepagina ul li a {
+    color: #000;
+    text-align: center;
+}
+
+.programa-item .conductor-name {
+    font-size: 1.5rem;
+    display: block;
+}

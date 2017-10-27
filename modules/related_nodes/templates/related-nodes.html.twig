@@ -1,0 +1,10 @@
+<div class="related_nodes mt30">
+    <div class="related_nodes-title"><span class="text-pink text-upper text-bold">Más </span><span class="text-upper text-gray text-bold">que te podría gustar</span></div>
+    <div class="related_nodes_items">
+        <ul>
+        {% for node in nodes %}
+            <li> <a href="{{ url('entity.node.canonical', {'node': node.id}) }}">{{ node.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>

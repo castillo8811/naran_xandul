@@ -1,0 +1,389 @@
+@media (max-width: 640px) {
+
+    ul.menu {
+        margin: 0 auto;
+    }
+
+    #stage .stageInner .col-md-12 {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    #stage .stageInner .col-xs-2 {
+        width: 25%;
+    }
+    
+    #stage .stageInner .col-xs-2 a {
+        display: block;
+        overflow: hidden;
+    }
+
+    #stage .stageInner .col-xs-10 {
+        width: 75%;
+    }
+
+    .node-author-section-inner {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .nodelist-title {
+        margin-bottom: 15px;
+    }
+
+    .nodelist-audiolink {
+        width: 60% !important;
+        float: none !important;
+        margin: 0 auto;
+        font-size: 1.5rem;
+    }
+
+    #newsletter-subscription img {
+        width: 63%;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+
+    #newsletter-subscription-form input {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #newsletter-subscription .form-item {
+        margin: 10px auto;
+        float: none;
+        width: 100%;
+
+    }
+
+    #newsletter-subscription .form-submit {
+        margin: 0 auto;
+        float: none;
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .newsletter-conditions {
+        font-size: 1rem;
+    }
+
+    .nodelist-autor-wrapper {
+        margin-bottom: 15px !important;
+    }
+
+    .nodelist-title a {
+        font-size: 2.5rem !important;
+        line-height: 1;
+    }
+
+    .text-xs-left {
+        text-align: left;
+    }
+
+    .text-xs-right {
+        text-align: right;
+    }
+
+    .text-xs-center {
+        text-align: center;
+    }
+
+    .text-xs-justify {
+        text-align: justify;
+    }
+
+    .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    .region-content {
+        padding-right: 0px;
+    }
+
+    .nodeListItem:last-child {
+        display: none;
+    }
+
+    #bios img {
+        width: 100% !important;
+    }
+
+    .bios-title {
+        font-size: 2.3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .node-autor, .node-date {
+        display: block !important;
+        float: none !important;
+    }
+
+    .node-date {
+        font-size: 1.3rem
+    }
+
+    .newsletter-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .newsletter-logo {
+        width: 23%;
+    }
+
+    #newsletter-subscription .banner {
+        margin: 0 auto;
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+        background: transparent;
+    }
+
+    #footer-brand-inner {
+        width: 35%;
+        margin: 0 auto;
+
+    }
+
+    #footer-brand-inner .brand-text {
+        display: none;
+    }
+
+    .footer-spotify-inner {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #footer-spotify a {
+        font-size: 1.5rem;
+        width: 71%;
+    }
+
+    #footer-social ul {
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 10px;
+    }
+
+    #footer-social ul li {
+        padding: 5px;
+    }
+
+    /***Node Styles**/
+    .node-article-wrapper {
+        padding-right: 0px;
+    }
+
+    .path-node .region-content {
+        padding-right: 10px;
+    }
+
+    .path-node .related_nodes-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    #block-piedepagina ul li {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 0 15px 0 0;
+        font-weight: bold;
+        border-bottom: solid 1px lightgray;
+    }
+
+    #block-piedepagina ul {
+        border-bottom: none;
+    }
+
+    ul.menu {
+        width: 100%;
+    }
+
+    .navbar-nav > li {
+        margin: 0 0 0 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .text-sm-left {
+        text-align: left;
+    }
+
+    .text-sm-right {
+        text-align: right;
+    }
+
+    .text-sm-center {
+        text-align: center;
+    }
+
+    .text-sm-justify {
+        text-align: justify;
+    }
+
+    .nodeListItem {
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    .newsletter-logo {
+        width: 30%;
+        display: inline-block;
+    }
+
+    .newsletter-title {
+        width: 65%;
+        font-size: 1.6rem;
+    }
+
+    #mailchimp-signup-subscribe-block-NaranXandul-form input[type="email"] {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+
+    #mailchimp-signup-subscribe-block-NaranXandul-form .form-submit {
+        width: 80%;
+        font-size: 1.3rem;
+    }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+
+    #stage .nodelist-audiolink {
+        width: 40%;
+        float: right;
+    }
+
+    .navbar-header {
+        width: 30%;
+    }
+
+    .navbar-header img {
+        width: 90%;
+    }
+
+    ul.menu {
+        width: 70%;
+    }
+
+    ul.menu li a {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav > li {
+        margin: 0 0% 0 0;
+    }
+
+    #footer-brand-inner {
+        width: 57%;
+        margin: 0 auto;
+    }
+
+    .footer-spotify-inner {
+        width: 93%;
+        margin: 0 auto;
+    }
+
+    #footer-social ul {
+        width: 50%;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .nodeListItem:last-child {
+        display: none;
+    }
+
+    .page-node .brand-text {
+        display: none;
+    }
+
+    #block-piedepagina ul li {
+        margin: 0 0 0 0;
+    }
+
+    #newsletter-subscription .form-submit {
+        width: 148px;
+        background-color: #0E5EA9;
+        color: white;
+        font-weight: bold;
+        margin-left: 20px;
+        font-size: 9px;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-md-left {
+        text-align: left;
+    }
+
+    .text-md-right {
+        text-align: right;
+    }
+
+    .text-md-center {
+        text-align: center;
+    }
+
+    .text-md-justify {
+        text-align: justify;
+    }
+
+    .container {
+        width: 1010px;
+    }
+
+    section.col-sm-8 {
+        width: 700px !important;
+    }
+
+    .sidebar-second {
+        width: 300px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-lg-left {
+        text-align: left;
+    }
+
+    .text-lg-right {
+        text-align: right;
+    }
+
+    .text-lg-center {
+        text-align: center;
+    }
+
+    .text-lg-justify {
+        text-align: justify;
+    }
+
+    .container {
+        max-width: 1024px !important;
+        width: 1024px !important;
+    }
+
+    .newsletter-logo {
+        width: 25%;
+    }
+
+    .newsletter-title {
+        font-size: 2.5rem;
+    }
+
+    #mailchimp-signup-subscribe-block-NaranXandul-form input[type="email"] {
+        width: 80%;
+    }
+
+    #mailchimp-signup-subscribe-block-NaranXandul-form .form-submit {
+        width: 80%;
+    }
+}

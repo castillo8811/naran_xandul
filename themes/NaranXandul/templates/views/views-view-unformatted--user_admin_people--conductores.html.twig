@@ -1,0 +1,16 @@
+<div id="conductores" class="mt30 col-sm-12">
+  {% for row in rows %}
+    {%
+    set row_classes = [
+    default_row_class ? 'views-row',
+    'panel',
+    'panel-default',
+    ]
+    %}
+
+    <div class="conductoresListItem col-sm-6 col-md-4 col-xs-12">
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>
+<div class="clear"></div>

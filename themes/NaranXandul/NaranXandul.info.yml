@@ -1,0 +1,22 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+name: 'NaranXandul'
+description: 'Tema para el sitio NaranXandul'
+package: 'Bootstrap'
+regions: 
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Content'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+libraries: 
+  - 'boots_theme/global-styling' 
+  - 'boots_theme/bootstrap-scripts'
+  - 'NaranXandul/global-styling'
+

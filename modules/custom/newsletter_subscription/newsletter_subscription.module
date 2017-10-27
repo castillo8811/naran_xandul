@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function newsletter_subscription_theme($existing, $type, $theme, $path)
+{
+    return [
+        'newsletter_subscription' => [
+            'variables' => [
+                'nodes' => NULL,
+            ],
+        ],
+    ];
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ *
+ * @param \Drupal\mailchimp_signup\Form\MailchimpSignupPageForm $form
+ * @param \Drupal\Core\Form\FormStateInterface                  $form_state
+ * @param                                                       $form_id
+ */
+function newsletter_subscription_form_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id) {
+
+    if ($form_id != 'mailchimp_signup_subscribe_block_informe24_mc_form') {
+        return;
+    }
+
+    $form['submit']['#ajax'] = [
+        'callback' => 'mailchimp_ajax_form_callback',
+        'prevent'  => 'click',
+        'progress' => array(
+            'type' => 'throbber',
+            'message' => t('Submitting data...')
+        )
+    ];
+
+}
+
+function mailchimp_ajax_form_callback(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    $response = new \Drupal\Core\Ajax\AjaxResponse();
+    $messages = drupal_get_messages();
+    $message = $messages['status'][0];
+
+    if(!$message){
+        $message = '<span id="mailchimp-signup-subscribe-block-informe24-mc-form-error-message">'.$messages['error'][0].'</span>';
+        $response->addCommand(new \Drupal\Core\Ajax\ReplaceCommand('#mailchimp-signup-subscribe-block-informe24-mc-form-error-message', $message));
+        return $response;
+    }
+    $response->addCommand(new \Drupal\Core\Ajax\ReplaceCommand('#newsletter-subscription-form', $message));
+    return $response;
+}
