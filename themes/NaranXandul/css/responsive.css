@@ -1,5 +1,9 @@
 @media (max-width: 640px) {
 
+    .slick-dots {
+        width: 95% !important;
+     }
+
     ul.menu {
         margin: 0 auto;
     }
@@ -40,10 +44,8 @@
     }
 
     #newsletter-subscription img {
-        width: 63%;
         margin: 0 auto;
         text-align: center;
-        display: block;
     }
 
     #newsletter-subscription-form input {
@@ -63,7 +65,9 @@
         margin: 0 auto;
         float: none;
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        width: 80%;
+        height: 50px;
     }
 
     .newsletter-conditions {
@@ -165,13 +169,8 @@
     }
 
     #footer-social ul {
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
-        padding-left: 10px;
-    }
-
-    #footer-social ul li {
-        padding: 5px;
     }
 
     /***Node Styles**/
@@ -188,7 +187,7 @@
         text-align: center;
     }
 
-    #block-piedepagina ul li {
+    #block-naranxandul-piedepagina ul li {
         display: block;
         float: none;
         width: 100%;
@@ -197,8 +196,10 @@
         border-bottom: solid 1px lightgray;
     }
 
-    #block-piedepagina ul {
+    #block-naranxandul-piedepagina ul {
         border-bottom: none;
+        width: 100%;
+        margin: 0 auto;
     }
 
     ul.menu {

@@ -1,23 +1,4 @@
-{% set stage = rows | first %}
-{% set rows = rows | slice(1,6) %}
-
-{% if is_front %}
-  <div id="stage">
-    <div class="col-md-12 stageInner">
-      {{ stage.content }}
-      <div class="clear"></div>
-    </div>
-  </div>
-{% endif %}
-
-
 <div id="last-news">
-  {% if is_front %}
-    <div class="block PN3r0 text-bold ml10 text-center">
-      <span class="text-danger text-center">Más de Informe 24</span>
-    </div>
-  {% endif %}
-
   {% for row in rows %}
     {%
     set row_classes = [

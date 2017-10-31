@@ -1,23 +1,16 @@
-<div class="nodelist-title">
-    {{ fields.title.content }}
-</div>
-<div class="col-md-12 col-xs-10 block center-block nodelist-autor-wrapper">
-    <div>
-        <div class="col-sm-4 col-xs-2">
-            {{ fields.field_conductor.content }}
-        </div>
-        <div class="nodelist-autor col-sm-8 col-xs-10">
-            {{ fields.field_programa.content }}
-            <div class="node-autor-name">
-                {{ fields.field_conductor_1.content }}
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
-
-<div class="nodelist-audiolink">
-    <a href="{{ path('entity.node.canonical', {'node': 1 }) }}">
-        Escuchar <img src="/themes/NaranXandul/images/icono_audio.png" />
+<div class="nodeList-image">
+    <a href="#">
+        {{ fields.field_image.content }}
     </a>
+</div>
+<div class="nodeList-category">
+    <a href="#">
+        {{ fields.field_category.content }}
+    </a>
+</div>
+<div class="nodeList-autor">
+    Por {{ fields.uid.content }}
+</div>
+<div class="nodeList-title mb20">
+    {{ fields.title.content }}
 </div>

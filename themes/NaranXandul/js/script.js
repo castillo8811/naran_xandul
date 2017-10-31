@@ -3,6 +3,27 @@
  */
 
 jQuery(document).ready(function(){
+
+    jQuery('.carrousel').slick({
+        centerMode: true,
+        centerPadding: '8   0px',
+        slidesToShow: 3,
+        dots: true,
+        focusOnSelect: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: false,
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
     if(jQuery('.contact-message-feedback-form').length) {
         jQuery('#edit-name').attr('placeholder', 'Tu nombre').width(250);
         jQuery('#edit-mail').attr('placeholder', 'Tu correo electrónico').width(250);
