@@ -9,6 +9,54 @@
     height: 52px;
 }
 
+.category{
+    display: inline-block;
+}
+
+
+.category-juegos {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -3px;
+    width: 24px;
+    height: 47px;
+}
+
+.category-nombres {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -62px;
+    width: 29px;
+    height: 28px;
+}
+
+.category-educacion {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -109px;
+    width: 21px;
+    height: 32px;
+}
+
+.category-manualidades {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -160px;
+    width: 25px;
+    height: 30px;
+}
+
+.category-moda {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -211px;
+    width: 28px;
+    height: 26px;
+}
+
+.category-videos {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -262px;
+    width: 24px;
+    height: 23px;
+}
+
+.category-consejos {
+    background: url('../images/iconos_secciones.png') no-repeat -3px -311px;
+    width: 24px;
+    height: 23px;
+}
+
+
 .newsletter-logo{
     background: url('../images/sprite.png') no-repeat -5px -160px;
     width: 65px;

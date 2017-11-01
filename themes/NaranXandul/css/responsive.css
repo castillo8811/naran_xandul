@@ -1,5 +1,9 @@
 @media (max-width: 640px) {
 
+    .category{
+        zoom: .6;
+    }
+
     .slick-dots {
         width: 95% !important;
      }

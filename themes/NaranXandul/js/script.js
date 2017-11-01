@@ -4,14 +4,14 @@
 
 jQuery(document).ready(function(){
 
-    jQuery('.carrousel').slick({
+    jQuery('#stage').slick({
         centerMode: true,
         centerPadding: '8   0px',
         slidesToShow: 3,
         dots: true,
         focusOnSelect: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 480,
@@ -23,6 +23,29 @@ jQuery(document).ready(function(){
             }
         ]
     });
+
+    jQuery('#nombres .carrousel, #cursos .carrousel, #frases .carrousel').slick({
+        centerMode: true,
+        centerPadding: '8   0px',
+        slidesToShow: 3,
+        dots: true,
+        focusOnSelect: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1,
+                    centerPadding: '10%',
+                }
+            }
+        ]
+    });
+
+
 
     if(jQuery('.contact-message-feedback-form').length) {
         jQuery('#edit-name').attr('placeholder', 'Tu nombre').width(250);

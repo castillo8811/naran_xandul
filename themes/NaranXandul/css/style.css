@@ -154,9 +154,17 @@ ul.menu {
 
 }
 
+.nodeList-category{
+    margin-top: 5px;
+}
+
 .nodeList-category a{
     font-size: 1.8rem;
     color: #000;
+}
+
+.nodeList-autor{
+    font-size: 1.3rem;
 }
 
 .nodeList-autor a {
@@ -216,6 +224,60 @@ ul.menu {
     position: absolute;
     left: 0;
     right: 0;
+}
+
+
+.nombres-item{
+    padding: 20px;
+    background-color: #0d88c1;
+    margin: 0 5px 20px 5px ;
+}
+
+#nombres .nodeList-title a{
+    font-size: 3rem;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+#nombres .nodeList-body{
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.frases-item{
+    background-color: deeppink;
+    padding: 20px;
+    margin: 0 5px 20px 5px ;
+}
+
+#frases .nodeList-body{
+    font-size: 2rem;
+    margin: 20px;
+    color: white;
+    text-align: center;
+}
+
+#cursos h3{
+    text-align: center;
+}
+
+.curso-link{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    border: solid 1px lightgrey;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 70%;
+}
+
+.curso-link a{
+    color: dimgray;
+    text-transform: uppercase;
 }
 
 #newsletter-subscription {
