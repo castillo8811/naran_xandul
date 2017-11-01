@@ -1,0 +1,16 @@
+<div id="nombres">
+    <h3>Nombres</h3>
+    <div class="carrousel">
+        {% for row in rows %}
+            {% set row_classes = [
+            default_row_class ? 'views-row',
+            'panel',
+            'panel-default',
+            ] %}
+
+            <div class="nombres-item col-sm-4">
+                {{ row.content }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
