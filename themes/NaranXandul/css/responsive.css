@@ -1,5 +1,9 @@
 @media (max-width: 640px) {
 
+    .navbar-default {
+        border-radius: 0px !important;
+    }
+
     .category{
         zoom: .6;
     }

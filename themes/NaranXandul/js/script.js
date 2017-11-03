@@ -12,6 +12,9 @@ jQuery(document).ready(function(){
         focusOnSelect: true,
         autoplay: true,
         autoplaySpeed: 5000,
+        centerMode: true,
+        centerPadding: '10%',
+        slidesToShow: 1,
         responsive: [
             {
                 breakpoint: 480,
@@ -58,15 +61,4 @@ jQuery(document).ready(function(){
     if(jQuery('#edit-mergevars-email').lenght){
         jQuery('#edit-mergevars-email').attr('placeholder', 'Correo electrónico');
     }
-
-    if(jQuery(".path-node")){
-        jQuery("#navbar").sticky({ topSpacing: 0 });
-        jQuery('#navbar').on('sticky-start', function() {
-            jQuery('header .brand-text').html(jQuery('.node-title').html()).addClass('node-head-text');
-        });
-        jQuery('#navbar').on('sticky-end', function() {
-            jQuery(' header .brand-text').html('Más Música Banda').removeClass('node-head-text');
-        });
-    }
-
 });
