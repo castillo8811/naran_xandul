@@ -21,7 +21,8 @@ jQuery(document).ready(function(){
                 settings: {
                     arrows: false,
                     centerMode: false,
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    centerPadding: '0',
                 }
             }
         ]

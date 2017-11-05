@@ -1,5 +1,33 @@
 @media (max-width: 640px) {
 
+    .main-container.container{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        overflow: hidden;
+    }
+
+    #stage img{
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .newsletter-head {
+        display: block;
+    }
+
+    #newsletter-subscription .form-item {
+        float: left;
+        width: 40%;
+    }
+
+    .form-submit {
+        width: 220px;
+        background-color: darkorange;
+        color: white;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
     .navbar-default {
         border-radius: 0px !important;
     }
