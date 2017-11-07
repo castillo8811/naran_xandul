@@ -604,6 +604,7 @@ ul.menu {
     float: right;
     padding-right: 10px;
     margin: 20px 0 0 0;
+    color: dimgray;
 }
 
 #node-author-section{
@@ -635,19 +636,8 @@ ul.menu {
 }
 
 .node-autor a{
-    color: #000;
+    color: dimgrey;
     text-transform: capitalize;
-}
-
-.field--name-field-programa a {
-    font-weight: bold;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    color: dimgray;
-}
-
-.field--name-field-conductor a {
-    color: #000;
 }
 
 .node-title {
