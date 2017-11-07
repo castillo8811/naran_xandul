@@ -603,11 +603,19 @@ ul.menu {
 .node-date {
     float: right;
     padding-right: 10px;
+    margin: 20px 0 0 0;
+}
+
+#node-author-section{
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .node-author-section {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
     font-size: 1.5rem;
 }
 
@@ -619,6 +627,16 @@ ul.menu {
 .node-author-section-inner img {
     width: 70px;
     margin-right: 15px;
+}
+
+.node-autor{
+    margin: 15px 0 0 0;
+    display: block;
+}
+
+.node-autor a{
+    color: #000;
+    text-transform: capitalize;
 }
 
 .field--name-field-programa a {
@@ -728,6 +746,19 @@ ul.menu {
     display: block;
     padding-bottom: 20px;
 }
+
+.path-node .page-header{
+    display: none;
+}
+
+.node-category{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
 
 #mailchimp-signup-subscribe-block-NaranXandul-form label {
     display: none;
@@ -870,34 +901,6 @@ ul.menu {
     border-bottom: solid 2px lightgrey;
     padding-bottom: 19px;
 }
-
-.radio-image {
-    border: solid 1px dimgrey;
-    padding: 2px;
-    width: 100px;
-    height: 100px;
-}
-
-.radio-info {
-    margin: 0 0 0 6px;
-}
-
-.radio-info h3 {
-    padding: 0;
-    margin: 5px 0 0 0;
-    font-size: 2rem;
-}
-
-.radio-info span {
-    margin-top: 10px;
-    font-size: 1.8rem;
-    display: block;
-}
-
-.radio-info a {
-    color: black;
-}
-
 #block-naranxandul-piedepagina ul {
     border-bottom: solid 1px lightgray;
     border-top: solid 1px lightgray;
@@ -916,9 +919,4 @@ ul.menu {
 #block-naranxandul-piedepagina ul li a {
     color: #000;
     text-align: center;
-}
-
-.programa-item .conductor-name {
-    font-size: 1.5rem;
-    display: block;
 }
