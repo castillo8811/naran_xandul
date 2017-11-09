@@ -737,7 +737,7 @@ ul.menu {
     padding-bottom: 20px;
 }
 
-.path-node .page-header{
+.path-node .page-header, .path-taxonomy .page-header{
     display: none;
 }
 

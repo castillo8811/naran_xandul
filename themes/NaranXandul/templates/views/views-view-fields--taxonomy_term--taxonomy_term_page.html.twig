@@ -1,0 +1,16 @@
+<div class="nodeList-image">
+    <a href="#">
+        {{ fields.field_image.content }}
+    </a>
+</div>
+
+<div class="nodeList-category">
+    <span class="category category-{{ fields.field_category_1.content|transliterate|lower}}"></span>
+    {{ fields.field_category.content }}
+</div>
+<div class="nodeList-autor">
+    Por {{ fields.uid.content }}
+</div>
+<div class="nodeList-title mb20">
+    {{ fields.title.content }}
+</div>
