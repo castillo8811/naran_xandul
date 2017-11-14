@@ -48,33 +48,34 @@
     ]
   %}
 {% endif %}
-<div class="grid-item">
+<div class="grid-item mb30">
 {% if title %}
-  <div class="grid-item-title">
+  <div class="grid-item-title col-sm-1 col-xs-2">
     <h3>{{ title }}</h3>
   </div>
 {% endif %}
-<div{{ attributes.addClass(classes) }}>
-  {% if options.alignment == 'horizontal' %}
-    {% for row in items %}
-      <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
-        {% for column in row.content %}
-          <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
-            {{ column.content }}
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  {% else %}
-    {% for column in items %}
-      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
-        {% for row in column.content %}
-          <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
-            {{ row.content }}
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  {% endif %}
-</div>
+  <div{{ attributes.addClass(classes,"col-sm-11 col-xs-10") }}>
+    {% if options.alignment == 'horizontal' %}
+      {% for row in items %}
+        <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+          {% for column in row.content %}
+            <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+              {{ column.content }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for column in items %}
+        <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+          {% for row in column.content %}
+            <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+              {{ row.content }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="clear"></div>
 </div>

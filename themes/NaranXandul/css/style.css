@@ -655,6 +655,24 @@ ul.menu {
     margin-bottom: 15px;
 }
 
+.node-nombre-wrapper{
+    background-color: #0d88c1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.node-nombre-wrapper .node-title{
+    color: white;
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.node-nombre-wrapper .node-body{
+    font-size: 2rem;
+}
+
 .related_nodes-title {
     font-size: 3rem;
 }
