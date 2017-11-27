@@ -1,10 +1,10 @@
 
 audiofield.jplayer:
-  remote: https://github.com/jplayer/jPlayer/zipball/master
-  version: &audiofield_jplayer_version "4.7.0"
+  remote: https://github.com/jplayer/jPlayer/archive/2.9.2.zip
+  version: &audiofield_jplayer_version "2.9.2"
   license: &audiofield_jplayer_license
     name: MIT
-    url: https://github.com/jplayer/jPlayer/blob/master/MIT-LICENSE.txt
+    url: https://github.com/jplayer/jPlayer/blob/2.9.2/MIT-LICENSE.txt
     gpl-compatible: true
   css:
     component:
@@ -70,7 +70,7 @@ audiofield.jplayer.theme_jplayer_circle:
 
 audiofield.wordpress:
   remote: http://wpaudioplayer.com/wp-content/downloads/audio-player-standalone.zip
-  version: "2.0"
+  version: "2.2"
   license:
     name: MIT
     url: http://wpaudioplayer.com/license
@@ -85,11 +85,11 @@ audiofield.wordpress:
     - core/drupalSettings
 
 audiofield.mediaelement:
-  remote: https://github.com/mediaelement/mediaelement/zipball/master
-  version: "2.32.2"
+  remote: https://github.com/mediaelement/mediaelement/archive/4.2.5.zip
+  version: "4.2.5"
   license:
     name: MIT
-    url: https://github.com/johndyer/mediaelement
+    url: https://mediaelement.mit-license.org/
     gpl-compatible: true
   css:
     component:
@@ -106,11 +106,11 @@ audiofield.mediaelement:
     - core/drupalSettings
 
 audiofield.soundmanager:
-  remote: https://github.com/scottschiller/SoundManager2/zipball/master
-  version: &audiofield_soundmanager_version "2"
+  remote: https://github.com/scottschiller/SoundManager2/archive/V2.97a.20170601.zip
+  version: &audiofield_soundmanager_version "2.97.20170601"
   license: &audiofield_soundmanager_license
     name: BSD
-    url: http://www.schillmania.com/projects/soundmanager2/license.txt
+    url: https://github.com/scottschiller/SoundManager2/blob/V2.97a.20170601/license.txt
     gpl-compatible: true
   js:
     /libraries/soundmanager/script/soundmanager2-nodebug-jsmin.js: { minified: true }
@@ -171,7 +171,7 @@ audiofield.audiojs:
   version: "1"
   license:
     name: MIT
-    url: http://kolber.github.io/audiojs/
+    url: https://github.com/kolber/audiojs/blob/1.0.1/LICENSE
     gpl-compatible: true
   css:
     component:
@@ -186,18 +186,18 @@ audiofield.audiojs:
     - core/drupalSettings
 
 audiofield.projekktor:
-  remote: http://dist.projekktor.com/downloads/release/projekktor-1.3.09.zip
-  version: "1.3.09"
+  remote: https://github.com/frankyghost/projekktor/archive/1.3.09.zip
+  version: "1.2.37"
   license:
     name: GPL
-    url: https://github.com/frankyghost/projekktor/blob/master/LICENSE
+    url: https://github.com/frankyghost/projekktor/blob/1.3.09/dist/LICENSE
     gpl-compatible: true
   css:
     component:
       /libraries/projekktor/themes/maccaco/projekktor.style.css: {}
       css/audiofield.projekktor.css: {}
   js:
-    /libraries/projekktor/projekktor-1.3.09.min.js: { minified: true }
+    /libraries/projekktor/dist/projekktor-universal.min.js: { minified: true }
     js/projekktor.builder.js: {}
   dependencies:
     - core/jquery
@@ -206,8 +206,8 @@ audiofield.projekktor:
     - core/drupalSettings
 
 audiofield.wavesurfer:
-  remote: https://github.com/katspaugh/wavesurfer.js/zipball/master
-  version: "1.4.0"
+  remote: https://github.com/katspaugh/wavesurfer.js/archive/2.0.0-beta01.zip
+  version: "2.0.0-beta01"
   license:
     name: BSD 3-Clause License
     url: https://github.com/katspaugh/wavesurfer.js/blob/master/LICENSE

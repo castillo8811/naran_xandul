@@ -109,37 +109,37 @@
 }
 
 .fb-logo {
-    background: url('../images/sprite.png') no-repeat -5px -430px;
-    width: 50px;
-    height: 50px;
+    background: url('../images/iconos_secciones.png') no-repeat 0px -310px;
+    width: 47px;
+    height: 47px;
     display: block;
 }
 
 .tw-logo {
-    background: url('../images/sprite.png') no-repeat -5px -481px;
-    width: 50px;
-    height: 50px;
+    background: url('../images/iconos_secciones.png') no-repeat 0px -362px;
+    width: 47px;
+    height: 47px;
     display: block;
 }
 
 .yt-logo {
-    background: url('../images/sprite.png') no-repeat -5px -533px;
-    width: 50px;
-    height: 50px;
+    background: url('../images/iconos_secciones.png') no-repeat 0px -414px;
+    width: 47px;
+    height: 47px;
     display: block;
 }
 
 .insta-logo {
-    background: url('../images/sprite.png') no-repeat -5px -585px;
-    width: 50px;
-    height: 50px;
+    background: url('../images/iconos_secciones.png') no-repeat 0px -466px;
+    width: 47px;
+    height: 47px;
     display: block;
 }
 
 .email-logo {
-    background: url('../images/sprite.png') no-repeat -5px -637px;
-    width: 50px;
-    height: 50px;
+    background: url('../images/iconos_secciones.png') no-repeat 0px -518px;
+    width: 47px;
+    height: 47px;
     display: block;
 }
 

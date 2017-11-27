@@ -72,6 +72,17 @@ abstract class AudioFieldPluginBase extends PluginBase {
   }
 
   /**
+   * Parses library to get version number of installed library.
+   *
+   * @return string
+   *   The version number of the currently installed library.
+   */
+  public function getPluginLibraryVersion() {
+    // Default to 1. This is implemented in the plugins.
+    return '1';
+  }
+
+  /**
    * Gets the location of this plugin's library installation.
    *
    * @return string
@@ -115,24 +126,68 @@ abstract class AudioFieldPluginBase extends PluginBase {
   /**
    * Checks to see if this audio plugin has been properly installed.
    *
+   * @param bool $log_error
+   *   Flag to indicate whether or not alert should be logged/shown.
+   *
    * @return bool
    *   Returns a boolean indicating install state.
    */
-  public function checkInstalled() {
+  public function checkInstalled($log_error = TRUE) {
     // Get the main library for this plugin.
     $library = $this->getPluginLibrary();
 
-    return file_exists(DRUPAL_ROOT . '/' . $library['js'][0]['data']);
+    // Check if the library is installed.
+    if (file_exists(DRUPAL_ROOT . '/' . $library['js'][0]['data'])) {
+      // Check to make sure the installed version is up to date.
+      $this->checkVersion($log_error);
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+  /**
+   * Checks to see if this audio plugin version is up to date.
+   *
+   * @param bool $log_error
+   *   Flag to indicate whether or not alert should be logged/shown.
+   *
+   * @return bool
+   *   Returns a boolean indicating if version is up to date.
+   */
+  public function checkVersion($log_error = TRUE) {
+    // Get the main library for this plugin.
+    $library = $this->getPluginLibrary();
+
+    // Check to make sure the installed version is up to date.
+    if (version_compare($this->getPluginLibraryVersion(), $library['version'], '<')) {
+      // Log the warning if necessary.
+      if ($log_error) {
+        $message_data = [
+          '@plugin' => $this->getPluginTitle(),
+          '@version' => $this->getPluginLibraryVersion(),
+          '@newversion' => $library['version'],
+          '@download-link' => Link::fromTextAndUrl($this->getPluginRemoteSource(), Url::fromUri($this->getPluginRemoteSource()))->toString(),
+          '%command' => 'drush audiofield-update',
+          '@status_report' => Link::createFromRoute('status report', 'system.status')->toString(),
+        ];
+        \Drupal::logger('audiofield')->warning('Warning: @plugin library is out of date. You should upgrade from version @version to version @newversion. You can manually download the required version here: @download-link or you can install automatically by running the command %command. See the @status_report for more information', $message_data);
+        drupal_set_message(t('Warning: @plugin library is out of date. You should upgrade from version @version to version @newversion. You can manually download the required version here: @download-link or you can install automatically by running the command %command. See the @status_report for more information', $message_data), 'warning');
+      }
+      return FALSE;
+    }
+    return TRUE;
   }
 
   /**
    * Shows library installation errors for in-use libraries.
    */
   public function showInstallError() {
-    drupal_set_message(t('Error: @library_name library is not currently installed! See the @status_report for more information.', [
+    $message_data = [
       '@library_name' => $this->getPluginLibraryName(),
       '@status_report' => Link::createFromRoute('status report', 'system.status')->toString(),
-    ]), 'error');
+    ];
+    \Drupal::logger('audiofield')->error('Error: @library_name library is not currently installed! See the @status_report for more information.', $message_data);
+    drupal_set_message(t('Error: @library_name library is not currently installed! See the @status_report for more information.', $message_data), 'error');
   }
 
   /**
@@ -148,11 +203,13 @@ abstract class AudioFieldPluginBase extends PluginBase {
     // Validate the file extension agains the list of valid extensions.
     $errors = file_validate_extensions($file, implode(' ', $this->pluginDefinition["fileTypes"]));
     if (count($errors) > 0) {
-      drupal_set_message(t('Error playing file %filename: currently selected audio player only supports the following extensions: %extensions', [
+      $message_data = [
         '%filename' => $file->getFilename(),
         '@player' => $this->getPluginLibraryName(),
         '%extensions' => implode(', ', $this->pluginDefinition["fileTypes"]),
-      ]), 'error');
+      ];
+      \Drupal::logger('audiofield')->error('Error playing file %filename: currently selected audio player only supports the following extensions: %extensions', $message_data);
+      drupal_set_message(t('Error playing file %filename: currently selected audio player only supports the following extensions: %extensions', $message_data), 'error');
       return FALSE;
     }
     return TRUE;
@@ -172,9 +229,11 @@ abstract class AudioFieldPluginBase extends PluginBase {
     $extension = pathinfo($link->toString(), PATHINFO_EXTENSION);
     if (!UrlHelper::isValid($link->toString(), FALSE) ||empty($extension)) {
       // We are currently not validating file types for links.
-      drupal_set_message(t('Error playing file: invalid link: %link', [
+      $message_data = [
         '%link' => $link->toString(),
-      ]), 'error');
+      ];
+      \Drupal::logger('audiofield')->error('Error playing file: invalid link: %link', $message_data);
+      drupal_set_message(t('Error playing file: invalid link: %link', $message_data), 'error');
       return FALSE;
     }
     return TRUE;
