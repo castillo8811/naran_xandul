@@ -227,8 +227,26 @@
         padding-right: 0px;
     }
 
-    .path-node .region-content {
-        padding-right: 10px;
+    #node-author-section {
+       margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .node-author-section {
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
+
+    .node-date {
+        margin: 5px 0 0 0;
+    }
+
+    .node-body{
+        padding: 15px;
     }
 
     .path-node .related_nodes-title {

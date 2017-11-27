@@ -4,6 +4,7 @@ namespace Drupal\audiofield\Plugin\AudioPlayer;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\audiofield\AudioFieldPluginBase;
+use Drupal\Component\Serialization\Json;
 
 /**
  * Implements the MediaElement Audio Player plugin.
@@ -69,6 +70,15 @@ class MediaElementAudioPlayer extends AudioFieldPluginBase {
         ],
       ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPluginLibraryVersion() {
+    // Parse the JSON file for version info.
+    $library_data = Json::decode(file_get_contents(drupal_realpath(DRUPAL_ROOT . $this->getPluginLibraryPath() . '/package.json')));
+    return $library_data['version'];
   }
 
 }

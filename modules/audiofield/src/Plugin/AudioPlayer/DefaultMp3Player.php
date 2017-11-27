@@ -38,7 +38,7 @@ class DefaultMp3Player extends AudioFieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function checkInstalled() {
+  public function checkInstalled($log_error = FALSE) {
     // This is built in to HTML5, so it is always "installed".
     return TRUE;
   }

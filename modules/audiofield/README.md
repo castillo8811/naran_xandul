@@ -64,9 +64,14 @@ MediaElement Audio Player
 
 Projekktor Audio Player
   Projekktor requires installation of the Projekktor library located at
-  http://www.projekktor.com - these files should be downloaded and placed
-  in /libraries/projekktor such that the file projekktor-1.3.09.min.js is found
-  at /libraries/projekktor/.
+  https://github.com/frankyghost/projekktor - these files should be downloaded
+  and placed in /libraries/projekktor. Please note that Projekktor requires
+  additional installation. This installation is automated with the drush
+  command, but if you are installing manually, you will also need to compile
+  Projekktor using the package.json and Gruntfile included in the distribution.
+  Once you have properly compiled Projekktor, you should find the file
+  projekktor-1.3.09.min.js at /libraries/projekktor/. This file will not exist
+  unless the distribution has been properly compiled.
 
   Install through drush using command drush audiofield-download projekktor.
 
@@ -87,9 +92,14 @@ SoundManager Audio Player
 
 Wavesurfer Audio Player
   Wavesurfer requires installation of the Wavesurfer library located at
-  https://github.com/katspaugh/wavesurfer.js - these files should be downloaded
-  and placed in /libraries/wavesurfer such that the file pwavesurfer.min.js is
-  found at /libraries/wavesurfer/dist/.
+  https://github.com/katspaugh/wavesurfer.js/releases - these files should be
+  downloaded and placed in /libraries/wavesurfer such that the file
+  wavesurfer.min.js is found at /libraries/wavesurfer/dist/.
+
+  Please note that there are two versions of Wavesurfer (> 2.0 and < 2.0).
+  Audioplayer supports both installations (installed to the same directory),
+  but there are small feature differences between the two to be aware of. The
+  drush command will install the latest version.
 
   Install through drush using command drush audiofield-download wavesurfer.
 

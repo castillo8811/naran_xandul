@@ -4,6 +4,7 @@ namespace Drupal\audiofield\Plugin\AudioPlayer;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\audiofield\AudioFieldPluginBase;
+use Drupal\Component\Serialization\Json;
 
 /**
  * Implements the Wavesurfer Audio Player plugin.
@@ -40,7 +41,7 @@ class WavesurferAudioPlayer extends AudioFieldPluginBase {
 
     // Start building settings to pass to the javascript wavesurfer builder.
     $player_settings = [
-      // Projekktor expects this as a 0 - 1 range.
+      // Wavesurfer expects this as a 0 - 1 range.
       'volume' => ($settings['audio_player_initial_volume'] / 10),
       'playertype' => ($settings['audio_player_wavesurfer_combine_files'] ? 'playlist' : 'default'),
       'files' => [],
@@ -77,6 +78,15 @@ class WavesurferAudioPlayer extends AudioFieldPluginBase {
         ],
       ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPluginLibraryVersion() {
+    // Parse the JSON file for version info.
+    $library_data = Json::decode(file_get_contents(drupal_realpath(DRUPAL_ROOT . $this->getPluginLibraryPath() . '/package.json')));
+    return $library_data['version'];
   }
 
 }
