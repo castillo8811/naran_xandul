@@ -677,18 +677,25 @@ ul.menu {
 
 .related_nodes-title {
     font-size: 3rem;
+    color: dimgray;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .related_nodes ul li {
     padding: 10px 0 10px 0;
+    border-bottom: solid 1px lightgray;
+    list-style: none;
 }
 
 .related_nodes ul {
     color: deepskyblue;
+    list-style: none;
+    padding: 0;
 }
 
 .related_nodes ul li a {
-    color: deepskyblue;
+    color: steelblue;
     text-decoration: none;
     font-weight: bold;
 }
