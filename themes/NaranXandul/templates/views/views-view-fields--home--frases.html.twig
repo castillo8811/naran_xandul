@@ -1,3 +1,9 @@
-<div class="nodeList-body">
-    {{ fields.body.content }}
-</div>
+{% if fields.field_image.content %}
+    <div class="nodeList-body">
+        {{ fields.field_image.content }}
+    </div>
+{% else %}
+    <div class="nodeList-body">
+        {{ fields.body.content }}
+    </div>
+{% endif %}
