@@ -972,11 +972,11 @@ ul.menu {
 
 .path-frases .frases-items .frases-item{
     background-color: transparent;
-    margin: 0 0px 0px 0px;
+    margin: 0 0px 15px 0px;
 }
 
 .path-frases .frases-items .frases-item .nodeList-body{
     background-color: deeppink;
     margin: 0 !important;
-    padding: 20px;
+    padding: 0px;
 }
