@@ -248,6 +248,17 @@ ul.menu {
     text-align: center;
     color: black;
     font-size: 2rem !important;
+
+}
+
+#cursos .nodeList-title a {
+    color: #666666;
+    text-align: center;
+    color: black;
+    font-size: 2rem !important;
+    display: block;
+    min-height: 70px;
+    margin-top: 5px;
 }
 
 .nodeList-category, .nodeList-autor {
