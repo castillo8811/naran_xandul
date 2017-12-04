@@ -224,13 +224,13 @@ ul.menu {
     position: relative;
 }
 
-.nodeListItemInner.videoList {
+.path-videos nodeListItemInner{
     padding: 5px;
     min-height: 180px !important;
     position: relative;
 }
 
-.nodeListItemInner.videoList .nodeList-title {
+.path-videos .nodeListItemInner .nodeList-title {
     padding: 5px;
     text-align: center;
     margin-bottom: 15px;
