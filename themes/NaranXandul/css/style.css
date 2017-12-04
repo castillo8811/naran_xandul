@@ -224,11 +224,23 @@ ul.menu {
     position: relative;
 }
 
-.nodeList-title {
+.nodeListItemInner.videoList {
+    padding: 5px;
+    min-height: 180px !important;
+    position: relative;
+}
+
+.nodeListItemInner.videoList .nodeList-title {
     padding: 5px;
     text-align: center;
     margin-bottom: 15px;
-    min-height: 95px;
+    min-height: 70px !important;
+}
+
+.nodeListItemInner.videoList {
+    padding: 5px;
+    min-height: 180px;
+    position: relative;
 }
 
 .nodeList-title a {
