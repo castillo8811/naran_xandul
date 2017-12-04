@@ -635,6 +635,9 @@ ul.menu {
     display: none;
 }
 
+.node-image img{
+    width: 100%;
+}
 .node-date {
     float: right;
     padding-right: 10px;
