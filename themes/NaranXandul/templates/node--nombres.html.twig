@@ -85,6 +85,27 @@ view_mode ? view_mode|clean_class,
   {% endif %}
   {{ title_suffix }}
 
+  <div id="social-shares" class="block">
+    <div id="social-shares-inner" class="col-sm-6 col-md-12 col-xs-12">
+      <div id="fb-share" class="col-lg-4">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?app_id=1855953211331152&sdk=joey&u={{ url('<current>') }}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')"></a>
+        <span></span>
+      </div>
+      <div id="tw-share" class="col-lg-4">
+        <a class="block" target="_blank" href="http://twitter.com/home?status=Estooy leyendo {{ url('<current>') }} via @masmusicabanda">
+          <span></span>
+        </a>
+      </div>
+      <div id="whatsapp-share" class="col-lg-4">
+        <a class="block loader-none" href="whatsapp://send?text=Mira que estoy leyendo en {{ url('<current>') }}">
+          <span></span>
+        </a>
+      </div>
+      <div class="both"></div>
+    </div>
+    <div class="both"></div>
+  </div>
+
   <div class="node-nombre-wrapper">
     <div class="node-title PN3r0 text-gray text-xs-center">
       {{ label}}
