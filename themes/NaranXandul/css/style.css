@@ -318,7 +318,7 @@ ul.menu {
 }
 
 .nombres-item {
-    background-color: lightgray;
+    background-color: transparent;
     margin: 0 5px 20px 5px;
 }
 
@@ -340,9 +340,8 @@ ul.menu {
 }
 
 .frases-item {
-    background-color: lightgray;
+    background-color: transparent;
     margin: 0 5px 20px 5px;
-    height: 250px;
     overflow: hidden;
 }
 
