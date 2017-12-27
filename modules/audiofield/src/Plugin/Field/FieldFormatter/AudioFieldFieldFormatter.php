@@ -84,7 +84,7 @@ class AudioFieldFieldFormatter extends FormatterBase implements ContainerFactory
     }
     // Let user select the audio player.
     $elements['audio_player'] = [
-      '#type' => 'radios',
+      '#type' => 'select',
       '#title' => $this->t('Select Player'),
       '#default_value' => $default_player,
       '#options' => $plugins['available'],
@@ -92,11 +92,15 @@ class AudioFieldFieldFormatter extends FormatterBase implements ContainerFactory
     if (count($plugins['unavailable']) > 0) {
       ksort($plugins['unavailable']);
       $elements['unavailable'] = [
-        '#type' => 'radios',
-        '#title' => $this->t('Disabled Players (install per Audiofield README in order to use)'),
-        '#default_value' => NULL,
-        '#options' => $plugins['unavailable'],
+        '#type' => 'details',
+        '#title' => $this->t('Disabled Players:'),
+        '#open' => TRUE,
         '#disabled' => TRUE,
+        [
+          '#type' => '#container',
+          '#attributes' => [],
+          '#children' => implode('<br/>', $plugins['unavailable']),
+        ],
       ];
     }
     // Settings for jPlayer.

@@ -1,0 +1,6 @@
+name: Related Nodes Module
+description: Related Nodes by Tags, Category and Direct References
+package: Custom
+type: module
+version: 1.0
+core: 8.x

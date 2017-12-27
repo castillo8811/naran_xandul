@@ -20,7 +20,7 @@ h3 {
     background-color: darkorange;
     color: white;
     font-weight: bold;
-    margin: 0px auto;
+    margin: 0px auto !important;
     display: block;
 }
 
@@ -224,16 +224,27 @@ ul.menu {
 
 .nodeListItemInner {
     padding: 5px;
-    min-height: 200px;
+    min-height: 210px;
     position: relative;
-    border-bottom: solid 1px lightgray;
 }
 
-.nodeList-title {
+.path-videos .nodeListItemInner{
+    padding: 5px;
+    min-height: 170px !important;
+    position: relative;
+}
+
+.path-videos .nodeListItemInner .nodeList-title {
     padding: 5px;
     text-align: center;
-    margin-bottom: 15px;
-    min-height: 95px;
+    margin-bottom: 0px;
+    min-height: 70px !important;
+}
+
+.nodeListItemInner.videoList {
+    padding: 5px;
+    min-height: 180px;
+    position: relative;
 }
 
 .nodeList-title a {
@@ -241,6 +252,18 @@ ul.menu {
     text-align: center;
     color: black;
     font-size: 2rem !important;
+    display: block;
+
+}
+
+#cursos .nodeList-title a {
+    color: #666666;
+    text-align: center;
+    color: black;
+    font-size: 2rem !important;
+    display: block;
+    min-height: 70px;
+    margin-top: 5px;
 }
 
 .nodeList-category, .nodeList-autor {
@@ -322,8 +345,7 @@ ul.menu {
 }
 
 .nombres-item {
-    padding: 20px;
-    background-color: #0d88c1;
+    background-color: transparent;
     margin: 0 5px 20px 5px;
 }
 
@@ -341,22 +363,17 @@ ul.menu {
 #nombres .nodeList-body {
     font-size: 1.5rem;
     color: white;
-    margin-top: 20px;
-    margin-bottom: 20px;
     text-align: center;
 }
 
 .frases-item {
-    background-color: deeppink;
-    padding: 20px;
+    background-color: transparent;
     margin: 0 5px 20px 5px;
-    height: 250px;
     overflow: hidden;
 }
 
 #frases .nodeList-body {
     font-size: 2rem;
-    margin: 20px;
     color: white;
     text-align: center;
 }
@@ -437,7 +454,7 @@ ul.menu {
     background-color: darkorange;
     color: white;
     font-weight: bold;
-    margin: 20px auto;
+    margin: 20px auto !important;
     display: block;
 }
 
@@ -579,14 +596,14 @@ ul.menu {
 }
 
 .fb-widget-head {
-    background: navy;
+    background: #FF9100;
     color: white;
     font-size: 2.5rem;
     text-align: center;
 }
 
 .tw-widget-head {
-    background: deepskyblue;
+    background: darkgray;
     color: white;
     font-size: 2.5rem;
     margin: 0 10px 0 0;
@@ -601,6 +618,30 @@ ul.menu {
     border: solid lightgrey;
 }
 
+.breadcrumb a{
+    color:black;
+}
+
+.breadcrumb li.active a{
+    color:darkgray;
+}
+
+.nav-tabs a{
+    color:black;
+}
+
+.nav-tabs li.active a{
+    color:darkgray;
+    font-weight: bolder;
+}
+
+.node-image .field--label{
+    display: none;
+}
+
+.node-image img{
+    width: 100%;
+}
 .node-date {
     float: right;
     padding-right: 10px;
@@ -661,18 +702,9 @@ ul.menu {
     color: #FFF;
 }
 
-.node-nombre-wrapper{
-    background-color: #0d88c1;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
 
-.node-nombre-wrapper .node-title{
-    color: white;
-    font-size: 6rem;
-    text-transform: uppercase;
-    margin-bottom: 30px;
+.node-nombre-wrapper .node-title, .node-frase-wrapper .node-title{
+    display: none;
 }
 
 .node-nombre-wrapper .node-body{
@@ -681,18 +713,25 @@ ul.menu {
 
 .related_nodes-title {
     font-size: 3rem;
+    color: dimgray;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .related_nodes ul li {
     padding: 10px 0 10px 0;
+    border-bottom: solid 1px lightgray;
+    list-style: none;
 }
 
 .related_nodes ul {
     color: deepskyblue;
+    list-style: none;
+    padding: 0;
 }
 
 .related_nodes ul li a {
-    color: deepskyblue;
+    color: steelblue;
     text-decoration: none;
     font-weight: bold;
 }
@@ -910,7 +949,7 @@ ul.menu {
 }
 
 #social-shares a {
-    width: 100px;
+    width: 100%;
     height: 70px;
     display: inline-block;
 }
@@ -987,4 +1026,16 @@ ul.menu {
 
 .glossary-row-item a {
     color: deepskyblue;
+}
+
+
+.path-frases .frases-items .frases-item{
+    background-color: transparent;
+    margin: 0 0px 15px 0px;
+}
+
+.path-frases .frases-items .frases-item .nodeList-body{
+    background-color: deeppink;
+    margin: 0 !important;
+    padding: 0px;
 }

@@ -58,7 +58,7 @@ class MailchimpSignupPageForm extends FormBase {
     $form['#attributes'] = array('class' => array('mailchimp-signup-subscribe-form'));
 
     $form['description'] = array(
-      '#markup' => $this->signup->settings['description'],
+      '#markup' => $this->signup->description,
     );
 
     $form['mailchimp_lists'] = array('#tree' => TRUE);
@@ -68,7 +68,7 @@ class MailchimpSignupPageForm extends FormBase {
     $lists_count = (!empty($lists)) ? count($lists) : 0;
 
     if (empty($lists)) {
-      drupal_set_message('The subscription service is currently unavailable. Please try again later.', 'warning');
+      drupal_set_message($this->t('The subscription service is currently unavailable. Please try again later.'), 'warning');
     }
 
     $list = array();
@@ -113,7 +113,7 @@ class MailchimpSignupPageForm extends FormBase {
 
     $mergevars_wrapper_id = isset($list->id) ? $list->id : '';
     $form['mergevars'] = array(
-      '#prefix' => '<div id="mailchimp-newsletter-' . $list->id . '-mergefields" class="mailchimp-newsletter-mergefields">',
+      '#prefix' => '<div id="mailchimp-newsletter-' . $mergevars_wrapper_id . '-mergefields" class="mailchimp-newsletter-mergefields">',
       '#suffix' => '</div>',
       '#tree' => TRUE,
     );
@@ -128,12 +128,12 @@ class MailchimpSignupPageForm extends FormBase {
       }
     }
 
-    $form['submit'] = array(
+    $form['actions'] = ['#type' => 'actions'];
+    $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#weight' => 10,
       '#value' => $this->signup->settings['submit_button'],
       '#disabled' => (empty($lists)),
-    );
+    ];
 
     return $form;
   }
@@ -154,7 +154,7 @@ class MailchimpSignupPageForm extends FormBase {
 
       // Filter the selected lists out of the form values.
       $selected_lists = array_filter($form_state->getValue('mailchimp_lists'),
-        function($list){
+        function($list) {
           return $list['subscribe'];
         }
       );
@@ -208,6 +208,18 @@ class MailchimpSignupPageForm extends FormBase {
       $list_id = $list_choices['subscribe'];
 
       $interests = isset($list_choices['interest_groups']) ? $list_choices['interest_groups'] : array();
+      if (isset($this->signup->settings['safe_interest_groups']) && $this->signup->settings['safe_interest_groups']) {
+        $current_status = mailchimp_get_memberinfo($list_id, $email);
+        if ($current_status) {
+          $current_interests = array();
+          foreach ($current_status->interests as $id => $selected) {
+            if ($selected) {
+              $current_interests[$id] = $id;
+            }
+          }
+          $interests[] = $current_interests;
+        }
+      }
       $result = mailchimp_subscribe($list_id, $email, $mergevars, $interests, $this->signup->settings['doublein']);
 
       if (empty($result)) {
@@ -224,7 +236,13 @@ class MailchimpSignupPageForm extends FormBase {
       drupal_set_message($this->signup->settings['confirmation_message'], 'status');
     }
 
-    $destination_url = Url::fromUri($base_url . '/' . $this->signup->settings['destination']);
+    $destination = $this->signup->settings['destination'];
+    if (empty($destination)) {
+      $destination_url = Url::fromRoute('<current>');
+    }
+    else {
+      $destination_url = Url::fromUri($base_url . '/' . $this->signup->settings['destination']);
+    }
 
     $form_state->setRedirectUrl($destination_url);
   }

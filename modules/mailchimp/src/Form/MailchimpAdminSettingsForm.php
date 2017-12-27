@@ -5,6 +5,7 @@ namespace Drupal\mailchimp\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
  * Configure Mailchimp settings for this site.
@@ -34,13 +35,12 @@ class MailchimpAdminSettingsForm extends ConfigFormBase {
       '#title' => t('Mailchimp API Key'),
       '#required' => TRUE,
       '#default_value' => $config->get('api_key'),
-      '#description' => t('The API key for your MailChimp account. Get or generate a valid API key at your @apilink.',
-        array('@apilink' => \Drupal::l(t('MailChimp API Dashboard'), $mc_api_url))),
+      '#description' => t('The API key for your MailChimp account. Get or generate a valid API key at your @apilink.', array('@apilink' => Link::fromTextAndUrl(t('MailChimp API Dashboard'), $mc_api_url)->toString())),
     );
     $form['cron'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Use batch processing.',
-      '#description' => 'Puts all Mailchimp subscription operations into the cron queue. (Includes subscribe, update, and unsubscribe operations.) <i>Note: May cause confusion if caches are cleared, as requested changes will appear to have failed until cron is run.</i>',
+      '#title' => t('Use batch processing.'),
+      '#description' => t('Puts all Mailchimp subscription operations into the cron queue. (Includes subscribe, update, and unsubscribe operations.) <i>Note: May cause confusion if caches are cleared, as requested changes will appear to have failed until cron is run.</i>'),
       '#default_value' => $config->get('cron'),
     );
     $form['batch_limit'] = array(
