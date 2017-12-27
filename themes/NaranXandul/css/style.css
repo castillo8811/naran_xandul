@@ -7,8 +7,8 @@ h3 {
 }
 
 #stage img{
-    width: 780px;
-    height: 300px;
+    width: 405px;
+    height: 405px;
 }
 
 #search-block-form{
@@ -653,6 +653,12 @@ ul.menu {
 .node-body img {
     width: 100%;
     margin-bottom: 15px;
+}
+
+.node-image-caption{
+    padding: 10px;
+    background: #666;
+    color: #FFF;
 }
 
 .node-nombre-wrapper{
