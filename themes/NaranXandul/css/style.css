@@ -702,6 +702,15 @@ ul.menu {
     display: inline-block;
 }
 
+.newsletter-header span{
+    color:#000;
+    font-size: 12px;
+}
+
+.newsletter-header img{
+    width: 80%;
+}
+
 .newsletter-title {
     display: inline-block;
     width: 73%;
@@ -713,6 +722,19 @@ ul.menu {
 .newsletter-conditions {
     font-size: 1.5rem;
     color: #000;
+    font-weight: bold;
+}
+
+.newsletter-header.pull-left.col-sm-10.col-xs-12 {
+    display: block;
+    float: none !important;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+
+.newsletter-header span {
+    color: #000;
+    font-size: 18px;
     font-weight: bold;
 }
 
