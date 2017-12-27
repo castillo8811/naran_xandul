@@ -764,7 +764,7 @@ ul.menu {
     font-weight: bold;
 }
 
-.newsletter-header.pull-left.col-sm-10.col-xs-12 {
+.newsletter-header{
     display: block;
     float: none !important;
     margin: 0 auto;
