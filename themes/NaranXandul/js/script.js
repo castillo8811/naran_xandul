@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 5000,
         centerMode: true,
-        centerPadding: '10%',
+        centerPadding: '30%',
         slidesToShow: 1,
         responsive: [
             {
