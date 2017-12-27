@@ -6,6 +6,10 @@ h3 {
     text-align: center !important;
 }
 
+#stage img{
+    width: 405px;
+    height: 405px;
+}
 
 #search-block-form{
     margin: 0 auto;
@@ -224,7 +228,7 @@ ul.menu {
     position: relative;
 }
 
-.path-videos .  nodeListItemInner{
+.path-videos .nodeListItemInner{
     padding: 5px;
     min-height: 170px !important;
     position: relative;
@@ -692,6 +696,13 @@ ul.menu {
     margin-bottom: 15px;
 }
 
+.node-image-caption{
+    padding: 10px;
+    background: #666;
+    color: #FFF;
+}
+
+
 .node-nombre-wrapper .node-title, .node-frase-wrapper .node-title{
     display: none;
 }
@@ -730,6 +741,15 @@ ul.menu {
     display: inline-block;
 }
 
+.newsletter-header span{
+    color:#000;
+    font-size: 12px;
+}
+
+.newsletter-header img{
+    width: 80%;
+}
+
 .newsletter-title {
     display: inline-block;
     width: 73%;
@@ -741,6 +761,19 @@ ul.menu {
 .newsletter-conditions {
     font-size: 1.5rem;
     color: #000;
+    font-weight: bold;
+}
+
+.newsletter-header.pull-left.col-sm-10.col-xs-12 {
+    display: block;
+    float: none !important;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+
+.newsletter-header span {
+    color: #000;
+    font-size: 18px;
     font-weight: bold;
 }
 

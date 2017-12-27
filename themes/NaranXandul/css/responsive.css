@@ -33,6 +33,12 @@
         width: 40%;
     }
 
+    .newsletter-header span {
+        color: #000;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
     .form-submit {
         width: 220px;
         background-color: darkorange;
