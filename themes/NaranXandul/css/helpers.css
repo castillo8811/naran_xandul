@@ -20,39 +20,57 @@
     display: inline-block;
 }
 
-.category-juegos {
-    background: url('../images/iconos_secciones.png') no-repeat 0px 0px;
+.category-embarazo {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -3px;
     width: 26px;
     height: 25px;
 }
 
-.category-nombres {
-    background: url('../images/iconos_secciones.png') no-repeat 0px -35px;
+.category-recien-nacido {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -40px;
     width: 29px;
     height: 25px;
     display: inline-block;
 }
 
-.category-educacion {
-    background: url('../images/iconos_secciones.png') no-repeat -3px -69px;
+.category-toodler {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -73px;
     width: 23px;
     height: 25px;
 }
 
-.category-manualidades {
-    background: url('../images/iconos_secciones.png') no-repeat -3px -104px;
+.category-etapa-preescolar {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -108px;
     width: 26px;
     height: 25px;
 }
 
-.category-moda {
-    background: url('../images/iconos_secciones.png') no-repeat 0px -138px;
+.category-crianza-consciente {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -143px;
+    width: 30px;
+    height: 25px;
+}
+
+.category-vida-de-mama {
+    background: url('../images/iconos_secciones_final.png') no-repeat -8px -178px;
+    width: 30px;
+    height: 25px;
+}
+
+.category-estimulacion {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -213px;
+    width: 30px;
+    height: 25px;
+}
+
+.category-papas {
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -252px;
     width: 30px;
     height: 25px;
 }
 
 .category-videos {
-    background: url('../images/iconos_secciones.png') no-repeat -0px -173px;
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -173px;
     width: 24px;
     height: 25px;
 }
