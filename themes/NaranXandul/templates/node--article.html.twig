@@ -120,7 +120,7 @@ view_mode ? view_mode|clean_class,
   </div>
 
   <div class="node-category">
-    <span class="category category-{{ content.field_category[0]['#title']|transliterate|lower}}"></span>
+    <span class="category category-{{ content.field_category[0]['#title']|transliterate|lower|replace({' ': "-"})|replace({' ': "-"})}}"></span>
     {{ content.field_category[0]['#title'] }}
   </div>
 
