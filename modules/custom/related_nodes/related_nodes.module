@@ -17,7 +17,6 @@ function related_nodes_theme($existing, $type, $theme, $path)
 
 }
 
-
 function get_related_nodes(){
     $nodes=[];
     if ($node = \Drupal::routeMatch()->getParameter('node')) {

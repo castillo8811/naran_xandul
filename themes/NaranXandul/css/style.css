@@ -6,6 +6,9 @@ h3 {
     text-align: center !important;
 }
 
+#cursos{
+  display:none;
+}
 #stage img{
     width: 405px;
     height: 405px;
