@@ -445,6 +445,9 @@ ul.menu {
     width: 100%;
 }
 
+.newsletter-conditions a{
+  color: #FFF;
+}
 
 .form-item-mergevars-email label {
     display: none;
