@@ -902,8 +902,6 @@ ul.menu {
 
 #social-shares {
     height: 50px;
-    left: 0;
-    right: 0;
     z-index: 1000 !important;
     margin-bottom: 10px;
 }
@@ -911,6 +909,8 @@ ul.menu {
 #social-shares-inner {
     margin: 0 auto;
     float: none;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 #social-shares-inner img {
@@ -920,7 +920,6 @@ ul.menu {
 }
 
 #fb-share {
-    width: 33%;
     height: 50px;
     background-color: darkblue;
     background: darkblue url(../images/btn_share_facebook.png) no-repeat;
@@ -929,7 +928,6 @@ ul.menu {
 }
 
 #tw-share {
-    width: 33%;
     height: 50px;
     background-color: deepskyblue;
     background: deepskyblue url(../images/btn_share_twitter.png) no-repeat;
@@ -945,7 +943,6 @@ ul.menu {
 }
 
 #whatsapp-share {
-    width: 33%;
     height: 50px;
     background-color: darkgreen;
     background: darkgreen url(../images/btn_share_whats_app.png) no-repeat;
