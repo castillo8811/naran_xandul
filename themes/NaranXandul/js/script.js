@@ -62,4 +62,8 @@ jQuery(document).ready(function(){
     if(jQuery('#edit-mergevars-email').lenght){
         jQuery('#edit-mergevars-email').attr('placeholder', 'Correo electrónico');
     }
+
+  if(jQuery(".path-node")){
+    jQuery("#social-shares").sticky({ topSpacing: 0 });
+  }
 });
