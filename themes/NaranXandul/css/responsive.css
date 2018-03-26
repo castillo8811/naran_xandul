@@ -6,6 +6,10 @@
         overflow: hidden;
     }
 
+  .region-header ol.breadcrumb{
+    display: none;
+  }
+
     #search-block-form{
         margin: 0 auto;
         width: 80%;
@@ -72,7 +76,7 @@
     #stage .stageInner .col-xs-2 {
         width: 25%;
     }
-    
+
     #stage .stageInner .col-xs-2 a {
         display: block;
         overflow: hidden;
