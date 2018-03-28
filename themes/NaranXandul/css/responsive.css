@@ -43,6 +43,10 @@
         font-weight: bold;
     }
 
+    .path-contact #edit-submit {
+      width: 45% !important;
+    }
+
     .form-submit {
         width: 220px;
         background-color: darkorange;
