@@ -164,7 +164,7 @@
     }
 
     .region-content {
-        padding-right: 0px;
+        padding: 10px;
     }
 
     .nodeListItem:last-child {
@@ -234,7 +234,7 @@
 
     /***Node Styles**/
     .node-article-wrapper {
-        padding-right: 0px;
+        padding: 0px;
     }
 
     #node-author-section {
