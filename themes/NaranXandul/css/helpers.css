@@ -64,7 +64,7 @@
 }
 
 .category-papas {
-    background: url('../images/iconos_secciones_final.png') no-repeat -1px -252px;
+    background: url('../images/iconos_secciones_final.png') no-repeat -1px -243px;
     width: 30px;
     height: 25px;
 }
@@ -93,6 +93,13 @@
     width: 26px;
     height: 25px;
     display: inline-block;
+}
+
+.category-nombres{
+  background: url('../images/iconos_secciones.png') no-repeat 0px -80px;
+  width: 26px;
+  height: 25px;
+  display: inline-block;
 }
 
 .newsletter-logo {
