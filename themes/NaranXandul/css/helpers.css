@@ -96,7 +96,14 @@
 }
 
 .category-nombres{
-  background: url('../images/iconos_secciones.png') no-repeat 0px -80px;
+  background: url('../images/iconos_secciones.png') no-repeat 0px -35px;
+  width: 26px;
+  height: 25px;
+  display: inline-block;
+}
+
+.category-manualidades{
+  background: url('../images/iconos_secciones.png') no-repeat 0px -104px;
   width: 26px;
   height: 25px;
   display: inline-block;
