@@ -20,6 +20,10 @@ h3 {
     width: 80%;
 }
 
+.view-taxonomy-term .field--name-description{
+  display: none;
+}
+
 #search-block-form .form-submit {
     background-color: darkorange;
     color: white;
