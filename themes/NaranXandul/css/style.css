@@ -686,7 +686,7 @@ ul.menu {
 }
 
 .node-autor a{
-    color: dimgrey;
+    color: #b6b6b6;
     text-transform: capitalize;
 }
 
@@ -707,7 +707,7 @@ ul.menu {
 .node-image-caption{
     padding: 10px;
     background: #666;
-    color: #FFF;
+    color: #b6b6b6;
 }
 
 
