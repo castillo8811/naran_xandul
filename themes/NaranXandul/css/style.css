@@ -786,9 +786,10 @@ ul.menu {
 }
 
 .newsletter-header span {
-    color: #000;
+    color: dimgray;
     font-size: 18px;
     font-weight: bold;
+    display: block;
 }
 
 .view-display-id-more_news_home {
