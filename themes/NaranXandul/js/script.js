@@ -4,6 +4,36 @@
 
 jQuery(document).ready(function(){
 
+
+    menu=jQuery("#block-naranxandul-mainnavigation").mmenu({
+        "offCanvas": {
+            "position": "bottom",
+            "zposition": "front"
+        },
+        "content": [
+            "searchfield"
+        ]
+    });
+    var icon = jQuery("#my-icon");
+    var API = menu.data( "mmenu" );
+
+
+    icon.on( "click", function() {
+        API.open();
+    });
+
+    API.bind( "open:finish", function() {
+        setTimeout(function() {
+            icon.addClass( "is-active" );
+        }, 100);
+    });
+    API.bind( "close:finish", function() {
+        setTimeout(function() {
+            icon.removeClass( "is-active" );
+        }, 100);
+    });
+
+
     jQuery('#stage').slick({
         centerMode: true,
         centerPadding: '8   0px',
@@ -66,4 +96,11 @@ jQuery(document).ready(function(){
   if(jQuery(".path-node")){
     jQuery("#social-shares").sticky({ topSpacing: 0 });
   }
+
+
+      jQuery('.mm-listitem').each(function(){
+          category=jQuery(this).find('a').eq(0).attr('data-drupal-link-system-path');
+          jQuery(this).find('a').eq(0).prepend('<span class="category category-'+category+'-gris"></span>');
+      });
+
 });

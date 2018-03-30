@@ -6,7 +6,13 @@ global-styling:
       css/helpers.css: {}
       css/style.css: {}
       css/responsive.css: {}
+      css/jquery.mmenu.all.css: {}
+      css/hamburgers.min.css: {}
+
   js:
       js/jquery.sticky.js: {}
       js/slick.min.js: {}
+      js/slick.min.js: {}
+      js/jquery.mmenu.all.js: {}
+      js/jquery.mmenu.bootstrap3.js: {}
       js/script.js: {}
