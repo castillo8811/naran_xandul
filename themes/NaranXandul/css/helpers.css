@@ -109,6 +109,75 @@
   display: inline-block;
 }
 
+
+
+
+
+.category-nombres-gris{
+    background: url('../images/iconos_secciones_gris.png') no-repeat 0px -41px;
+    width: 35px;
+    height: 25px;
+    display: inline-block;
+}
+
+.category-embarazo-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -9px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-recien-nacido-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -74px;
+    width: 35px;
+    height: 26px;
+    display: inline-block;
+}
+
+.category-toodler-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -73px;
+    width: 23px;
+    height: 25px;
+}
+
+.category-etapa-preescolar-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -108px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-crianza-consciente-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -178px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-vida-de-mama-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -8px -213px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-estimulacion-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -143px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-papas-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -239px;
+    width: 35px;
+    height: 25px;
+}
+
+.category-videos-gris {
+    background: url('../images/iconos_secciones_gris.png') no-repeat -1px -271px;
+    width: 35px;
+    height: 25px;
+}
+
+
+
+
 .newsletter-logo {
     background: url('../images/sprite.png') no-repeat -5px -160px;
     width: 65px;
