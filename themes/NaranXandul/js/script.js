@@ -99,8 +99,8 @@ jQuery(document).ready(function(){
 
 
       jQuery('.mm-listitem').each(function(){
-          category=jQuery(this).find('a').eq(0).attr('data-drupal-link-system-path');
-          jQuery(this).find('a').eq(0).prepend('<span class="category category-'+category+'-gris"></span>');
+          category=jQuery(this).find('a').eq(0).attr('href');
+          jQuery(this).find('a').eq(0).prepend('<span class="category category-'+category.replace('/','')+'-gris"></span>');
       });
 
 });
