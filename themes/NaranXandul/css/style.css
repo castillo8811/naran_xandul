@@ -12,11 +12,11 @@ h3 {
 }
 
 .mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened~.mm-slideout {
-    -webkit-transform: translate(306px,0) !important;
-    -ms-transform: translate(440px,0) !important;
-    transform: translate(306px,0) !important;
-    -webkit-transform: translate3d(306px,0,0) !important;
-    transform: translate3d(306px,0,0) !important;
+    -webkit-transform: translate(300px,0) !important;
+    -ms-transform: translate(300px,0) !important;
+    transform: translate(300px,0) !important;
+    -webkit-transform: translate3d(290px,0,0) !important;
+    transform: translate3d(300px,0,0) !important;
 }
 
 #cursos{
@@ -442,7 +442,7 @@ ul.menu {
 }
 
 #newsletter-subscription-form-inner{
-    margin-top: 50px ;
+    margin-top: 30px ;
 }
 
 .newsletter-head-desktop img{
@@ -516,10 +516,11 @@ ul.menu {
 }
 
 #footer-brand {
-    height: 65px;
+    padding: 10px;
     margin: 0 auto;
     text-align: center;
-    background-color: #FF9100;
+    background-color: grey;
+    color: white;
 }
 
 #footer-brand .navbar-brand {
@@ -791,7 +792,7 @@ ul.menu {
 
 .newsletter-conditions {
     font-size: 1.5rem;
-    color: #000;
+    color: darkorange;
     font-weight: bold;
 }
 
@@ -803,10 +804,11 @@ ul.menu {
 }
 
 .newsletter-header span {
-    color: dimgray;
-    font-size: 18px;
+    color: white;
+    font-size: 26px;
     font-weight: bold;
     display: block;
+    margin-top: 5px;
 }
 
 .view-display-id-more_news_home {
@@ -1068,4 +1070,18 @@ ul.menu {
     background-color: deeppink;
     margin: 0 !important;
     padding: 0px;
+}
+
+
+.btn-circle {
+    width: 127px;
+    height: 120px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 53px;
+    background-color: darkorange;
+    display: block;
+    margin: 0 auto;
 }

@@ -10,6 +10,10 @@ jQuery(document).ready(function(){
             "position": "bottom",
             "zposition": "front"
         },
+
+        "navbar":{
+          title:'Menú'
+        },
         "content": [
             "searchfield"
         ]
