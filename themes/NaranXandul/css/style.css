@@ -484,7 +484,6 @@ ul.menu {
     background-color: darkorange;
     color: white;
     font-weight: bold;
-    margin: 20px auto !important;
     display: block;
 }
 
@@ -646,6 +645,10 @@ ul.menu {
     padding: 10px 100px 10px 100px;
     font-weight: bold;
     border: solid lightgrey;
+}
+
+.breadcrumb{
+    display: none;
 }
 
 .breadcrumb a{
@@ -1085,3 +1088,41 @@ ul.menu {
     display: block;
     margin: 0 auto;
 }
+
+.search-advanced, .search-help-link{
+    display: none;
+
+}
+
+.path-search .region-content ul{
+    margin: 50px 0 0 0;
+    padding: 0;
+}
+
+.path-search .region-content ul li{
+    list-style: none;
+    border-bottom: solid 1px lightgrey;
+    margin-bottom: 50px;
+}
+
+.path-search .search-result__title a{
+    text-align: left;
+    color: grey;
+}
+
+.path-search .search-result__title{
+    text-align: left !important;
+}
+
+.path-search .search-result__info{
+    display: none;
+}
+
+.path-search .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: grey;
+    border-color: grey
+}
+
+.path-search .pagination > li > a, .pagination > li > span {
+    color: grey;
+ }
