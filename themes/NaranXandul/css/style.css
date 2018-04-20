@@ -933,9 +933,9 @@ ul.menu {
 }
 
 #social-shares {
-    height: 50px;
+    height: 80px;
     z-index: 1000 !important;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #social-shares-inner {
@@ -952,19 +952,21 @@ ul.menu {
 }
 
 #fb-share {
-    height: 50px;
-    background-color: darkblue;
-    background: darkblue url(../images/btn_share_facebook.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_facebook.png) no-repeat;
     background-position: center;
     float: left;
+    border-right: solid 2px lightgrey;
 }
 
 #tw-share {
-    height: 50px;
-    background-color: deepskyblue;
-    background: deepskyblue url(../images/btn_share_twitter.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_twitter.png) no-repeat;
     background-position: center;
     float: left;
+    border-right: solid 2px lightgrey;
 }
 
 #email-share {
@@ -975,9 +977,9 @@ ul.menu {
 }
 
 #whatsapp-share {
-    height: 50px;
-    background-color: darkgreen;
-    background: darkgreen url(../images/btn_share_whats_app.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_whats_app.png) no-repeat;
     background-position: center;
     float: left;
 }
