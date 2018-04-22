@@ -487,6 +487,14 @@ ul.menu {
     display: block;
 }
 
+
+#newsletter-subscription-form-inner .form-submit {
+    display: block;
+    margin-right:0px !important;
+    margin: 20px auto !important;
+}
+
+
 #mailchimp-signup-subscribe-block-NaranXandul-mc-form-error-message {
     display: block;
     clear: both;
