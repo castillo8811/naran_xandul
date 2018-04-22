@@ -14,10 +14,34 @@ jQuery(document).ready(function(){
         "navbar":{
           title:'Menú'
         },
-        "content": [
-            "searchfield"
-        ]
-    });
+        "navbars": [
+            {
+                "position": "top",
+                "content": [
+                    "searchfield"
+                ]
+            }
+        ],
+        "searchfield": {
+            "panel": true,
+            "showTextItems": true,
+            "search":false,
+            "add":true,
+            "title":"Buscar"
+        },
+
+    },{
+        "searchfield": {
+            "form" :
+                {
+                    "id":"search_site",
+                    "action":"/search/node",
+                    "method":"GET"
+                }
+            ,
+            "clear": false,
+            "submit":true,
+        }});
     var icon = jQuery("#my-icon");
     var API = menu.data( "mmenu" );
 
@@ -37,6 +61,7 @@ jQuery(document).ready(function(){
         }, 100);
     });
 
+    jQuery(".mm-searchfield__input input").attr('name','keys');
 
     jQuery('#stage').slick({
         centerMode: true,

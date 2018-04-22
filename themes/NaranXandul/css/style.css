@@ -484,7 +484,6 @@ ul.menu {
     background-color: darkorange;
     color: white;
     font-weight: bold;
-    margin: 20px auto !important;
     display: block;
 }
 
@@ -646,6 +645,10 @@ ul.menu {
     padding: 10px 100px 10px 100px;
     font-weight: bold;
     border: solid lightgrey;
+}
+
+.breadcrumb{
+    display: none;
 }
 
 .breadcrumb a{
@@ -930,9 +933,9 @@ ul.menu {
 }
 
 #social-shares {
-    height: 50px;
+    height: 80px;
     z-index: 1000 !important;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #social-shares-inner {
@@ -949,19 +952,21 @@ ul.menu {
 }
 
 #fb-share {
-    height: 50px;
-    background-color: darkblue;
-    background: darkblue url(../images/btn_share_facebook.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_facebook.png) no-repeat;
     background-position: center;
     float: left;
+    border-right: solid 2px lightgrey;
 }
 
 #tw-share {
-    height: 50px;
-    background-color: deepskyblue;
-    background: deepskyblue url(../images/btn_share_twitter.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_twitter.png) no-repeat;
     background-position: center;
     float: left;
+    border-right: solid 2px lightgrey;
 }
 
 #email-share {
@@ -972,9 +977,9 @@ ul.menu {
 }
 
 #whatsapp-share {
-    height: 50px;
-    background-color: darkgreen;
-    background: darkgreen url(../images/btn_share_whats_app.png) no-repeat;
+    height: 83px;
+    background-color: white;
+    background: white url(../images/btn_share_whats_app.png) no-repeat;
     background-position: center;
     float: left;
 }
@@ -1085,3 +1090,41 @@ ul.menu {
     display: block;
     margin: 0 auto;
 }
+
+.search-advanced, .search-help-link{
+    display: none;
+
+}
+
+.path-search .region-content ul{
+    margin: 50px 0 0 0;
+    padding: 0;
+}
+
+.path-search .region-content ul li{
+    list-style: none;
+    border-bottom: solid 1px lightgrey;
+    margin-bottom: 50px;
+}
+
+.path-search .search-result__title a{
+    text-align: left;
+    color: grey;
+}
+
+.path-search .search-result__title{
+    text-align: left !important;
+}
+
+.path-search .search-result__info{
+    display: none;
+}
+
+.path-search .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: grey;
+    border-color: grey
+}
+
+.path-search .pagination > li > a, .pagination > li > span {
+    color: grey;
+ }
