@@ -966,6 +966,8 @@ ul.menu {
     background-position: center;
     float: left;
     border-right: solid 2px lightgrey;
+    background-size: 25%;
+    margin-bottom: 10px;
 }
 
 #tw-share {
@@ -975,6 +977,8 @@ ul.menu {
     background-position: center;
     float: left;
     border-right: solid 2px lightgrey;
+    background-size: 25%;
+    margin-bottom: 10px;
 }
 
 #email-share {
@@ -990,6 +994,8 @@ ul.menu {
     background: white url(../images/btn_share_whats_app.png) no-repeat;
     background-position: center;
     float: left;
+    background-size: 25%;
+    margin-bottom: 10px;
 }
 
 #social-shares a {
