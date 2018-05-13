@@ -210,7 +210,7 @@ ul.menu {
     font-size: 2rem !important;
     text-align: center;
     font-weight: bold;
-    background-color: lightgoldenrodyellow;
+    background-color: #ccc;
     height: 90px;
     padding: 5px;
     display: block;
@@ -223,15 +223,21 @@ ul.menu {
 }
 
 .slick-dots li button:before {
-    font-size: 69px;
+    font-size: 30px;
 }
 
 .pleca-seccion{
     display: block;
     margin: 20px auto 0;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
+}
+
+.pleca-seccion a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 5px;
 }
 
 .nodeListItem {
@@ -305,7 +311,7 @@ ul.menu {
 
 .nodeList-category a {
     font-size: 1.8rem;
-    color: #000;
+    color: dimgray;
 }
 
 .nodeList-autor {
@@ -648,11 +654,11 @@ ul.menu {
 }
 
 .pager__item .button {
-    background-color: dodgerblue;
+    background-color: #c6c6c6;
     color: white;
-    padding: 10px 100px 10px 100px;
+    padding: 8px 70px 8px 70px;
     font-weight: bold;
-    border: solid lightgrey;
+    border-radius:10px;
 }
 
 .breadcrumb{
@@ -738,9 +744,11 @@ ul.menu {
 }
 
 .node-image-caption{
-    padding: 10px;
-    background: #666;
-    color: #b6b6b6;
+    padding: 5px;
+    background: #ddd;
+    color:#000;
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 
@@ -847,10 +855,6 @@ ul.menu {
     padding-top: 10px;
 }
 
-#footer-social h3 {
-    margin: 0 !important;
-    color: dimgrey;
-}
 
 #footer-social ul {
     width: 36%;
@@ -860,6 +864,7 @@ ul.menu {
 
 #footer-social ul li {
     display: inline-block;
+    margin-left: 25px;
 }
 
 .node-body iframe {
@@ -960,7 +965,7 @@ ul.menu {
 }
 
 #fb-share {
-    height: 83px;
+    height: 65px;
     background-color: white;
     background: white url(../images/btn_share_facebook.png) no-repeat;
     background-position: center;
@@ -971,7 +976,7 @@ ul.menu {
 }
 
 #tw-share {
-    height: 83px;
+    height: 65px;
     background-color: white;
     background: white url(../images/btn_share_twitter.png) no-repeat;
     background-position: center;
@@ -989,7 +994,7 @@ ul.menu {
 }
 
 #whatsapp-share {
-    height: 83px;
+    height: 65px;
     background-color: white;
     background: white url(../images/btn_share_whats_app.png) no-repeat;
     background-position: center;
@@ -1142,3 +1147,15 @@ ul.menu {
 .path-search .pagination > li > a, .pagination > li > span {
     color: grey;
  }
+
+.path-frontpage .sidebar-second{
+    display: none;
+}
+
+.nodeList-autor{
+    display: none;
+}
+
+.footer-social h3{
+    margin: 5px 0 5px 0;
+}

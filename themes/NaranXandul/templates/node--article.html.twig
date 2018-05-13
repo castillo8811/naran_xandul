@@ -106,6 +106,15 @@ view_mode ? view_mode|clean_class,
     <div class="both"></div>
   </div>
 
+  <div class="node-title PN3r0 text-gray text-xs-center">
+      {{ label}}
+  </div>
+
+  <div class="node-category">
+    <span class="category category-{{ content.field_category[0]['#title']|transliterate|lower|replace({' ': "-"})|replace({' ': "-"})}}"></span>
+      {{ content.field_category[0]['#title'] }}
+  </div>
+
   <div class="node-image">
     {{ content.field_image}}
   </div>
@@ -114,15 +123,6 @@ view_mode ? view_mode|clean_class,
       {{ node.field_image.alt }}
     </div>
   {% endif %}
-
-  <div class="node-title PN3r0 text-gray text-xs-center">
-    {{ label}}
-  </div>
-
-  <div class="node-category">
-    <span class="category category-{{ content.field_category[0]['#title']|transliterate|lower|replace({' ': "-"})|replace({' ': "-"})}}"></span>
-    {{ content.field_category[0]['#title'] }}
-  </div>
 
   <div{{ content_attributes.addClass('node-body') }}>
     {{ content.body }}
