@@ -9,6 +9,10 @@
 }
 @media (max-width: 640px) {
 
+    .navbar-brand {
+        width: 60% !important;
+    }
+
     #fb-share, #tw-share, #whatsapp-share{
         background-size: 60%;
     }
