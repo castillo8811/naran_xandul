@@ -994,7 +994,7 @@ ul.menu {
 }
 
 #whatsapp-share {
-    height: 65px;
+    height: 65fpx;
     background-color: white;
     background: white url(../images/btn_share_whats_app.png) no-repeat;
     background-position: center;
@@ -1158,4 +1158,14 @@ ul.menu {
 
 .footer-social h3{
     margin: 5px 0 5px 0;
+}
+
+#edit-mergevars-email{
+    width: 280px;
+    margin: 0 auto;
+    display: block;
+}
+
+#last-news-3{
+    margin-top: 50px;
 }

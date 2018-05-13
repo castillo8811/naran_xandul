@@ -88,9 +88,8 @@ jQuery(document).ready(function(){
     });
 
     jQuery('#nombres .carrousel, #cursos .carrousel, #frases .carrousel').slick({
-        centerMode: true,
-        centerPadding: '8   0px',
         slidesToShow: 3,
+        slidesToScroll:3,
         dots: true,
         focusOnSelect: true,
         autoplay: true,
