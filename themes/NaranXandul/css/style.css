@@ -970,7 +970,6 @@ ul.menu {
     background: white url(../images/btn_share_facebook.png) no-repeat;
     background-position: center;
     float: left;
-    border-right: solid 2px lightgrey;
     background-size: 25%;
     margin-bottom: 10px;
 }
@@ -981,7 +980,6 @@ ul.menu {
     background: white url(../images/btn_share_twitter.png) no-repeat;
     background-position: center;
     float: left;
-    border-right: solid 2px lightgrey;
     background-size: 25%;
     margin-bottom: 10px;
 }
