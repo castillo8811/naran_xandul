@@ -131,4 +131,6 @@ jQuery(document).ready(function(){
           jQuery(this).find('a').eq(0).prepend('<span class="category category-'+category.replace('/','')+'-gris"></span>');
       });
 
+    jQuery(".mm-searchfield__input input").attr("placeholder","Buscar");
+
 });
