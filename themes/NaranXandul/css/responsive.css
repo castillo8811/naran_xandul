@@ -33,11 +33,7 @@
         text-overflow: ellipsis;
         max-height: 85px !important;
     }
-
-    .views-element-container.form-group {
-        display: none;
-    }
-
+    
     .navbar-brand {
         width: 60% !important;
     }
