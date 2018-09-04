@@ -19,10 +19,6 @@ h3 {
     transform: translate3d(300px,0,0) !important;
 }
 
-#cursos{
-  display:none;
-}
-
 #stage img{
     width: 405px;
     height: 405px;
