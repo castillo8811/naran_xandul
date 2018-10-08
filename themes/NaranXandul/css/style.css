@@ -432,19 +432,28 @@ ul.menu {
     color: white;
     position: relative;
     background: url('../images/newsletter-bg.jpg');
-    background-position: center;
-    background-size: cover;
     margin-top: 50px;
 }
 
 #newsletter-subscription-form{
-    margin: auto ;
+    margin: 50px auto 20px ;
     float: none !important;
     display: block;
 }
 
-#newsletter-subscription-form-inner{
-    margin-top: 30px ;
+#newsletter-subscription-form-inner {
+    background-color: lightgray;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    display: block;
+    float: none;
+    border-radius: 10px;
+}
+
+#newsletter-subscription .form-actions{
+    width: 330px;
+    float: none;
 }
 
 .newsletter-head-desktop img{
@@ -465,12 +474,12 @@ ul.menu {
 }
 
 #newsletter-subscription .form-item {
-    float: none;
-    width: 100%;
+    float: left;
+    width: 280px;
 }
 
 .newsletter-conditions a{
-  color: #FFF;
+  color: darkorange;
 }
 
 .form-item-mergevars-email label {
@@ -481,19 +490,11 @@ ul.menu {
     display: none;
 }
 
-.form-submit {
-    width: 220px;
-    background-color: darkorange;
-    color: white;
-    font-weight: bold;
-    display: block;
-}
-
-
 #newsletter-subscription-form-inner .form-submit {
-    display: block;
     margin-right:0px !important;
-    margin: 20px auto !important;
+    margin: 0 10px 0 10px;
+    background-color: darkorange;
+    color:white;
 }
 
 
@@ -809,6 +810,9 @@ ul.menu {
     font-size: 1.5rem;
     color: darkorange;
     font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .newsletter-header{
@@ -819,11 +823,10 @@ ul.menu {
 }
 
 .newsletter-header span {
-    color: white;
     font-size: 26px;
     font-weight: bold;
-    display: block;
     margin-top: 5px;
+    text-align: center;
 }
 
 .view-display-id-more_news_home {
@@ -1154,10 +1157,12 @@ ul.menu {
     margin: 5px 0 5px 0;
 }
 
-#edit-mergevars-email{
+#edit-mergevars-email {
     width: 280px;
-    margin: 0 auto;
+    margin: 0 0 0 5px;
     display: block;
+    background-color: transparent;
+    border: none;
 }
 
 #last-news-3{
