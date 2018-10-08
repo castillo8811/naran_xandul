@@ -1059,10 +1059,15 @@ ul.menu {
     color: #000;
     border-radius: 5px;
     font-size: 2.5rem;
-    width: 50px;
+    width: 65px;
     height: 50px;
     display: inline-block;
     text-align: center;
+}
+
+.view-display-id-nombres_page .view-display-id-nombres_indice{
+    padding: 20px;
+    background: url('../images/img_colores.jpg');
 }
 
 .view-display-id-nombres_page h3 {
