@@ -129,7 +129,7 @@
     #newsletter-subscription-form-inner {
         background-color: lightgray;
         padding: 10px;
-        width: 90%;
+        width: 95%;
         margin: auto;
         display: block;
         float: none;
@@ -143,14 +143,6 @@
 
     #newsletter-subscription .form-item {
         margin: 10px auto;
-    }
-
-    #newsletter-subscription .form-item {
-        width: 250px !important;
-    }
-
-    #edit-mergevars-email {
-        width: 250px !important;
     }
 
     #newsletter-subscription .form-submit {
@@ -515,10 +507,7 @@
     }
 
     #newsletter-subscription .form-item {
-        width: 200px !important;
-    }
-
-    #edit-mergevars-email {
-        width: 200px !important;
+        float: left;
+        width: 82%;
     }
 }

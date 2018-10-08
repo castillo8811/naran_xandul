@@ -451,11 +451,6 @@ ul.menu {
     border-radius: 10px;
 }
 
-#newsletter-subscription .form-actions{
-    width: 330px;
-    float: none;
-}
-
 .newsletter-head-desktop img{
     display: block;
     text-align: center;
@@ -475,7 +470,7 @@ ul.menu {
 
 #newsletter-subscription .form-item {
     float: left;
-    width: 280px;
+    width: 85%;
 }
 
 .newsletter-conditions a{
@@ -1163,7 +1158,6 @@ ul.menu {
 }
 
 #edit-mergevars-email {
-    width: 280px;
     margin: 0 0 0 5px;
     display: block;
     background-color: transparent;
