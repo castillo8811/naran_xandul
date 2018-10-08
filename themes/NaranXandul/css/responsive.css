@@ -1,22 +1,3 @@
-@media (max-width: 325px) {
-    .mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened ~ .mm-slideout {
-        -webkit-transform: translate(260px, 0) !important;
-        -ms-transform: translate(260px, 0) !important;
-        transform: translate(260px, 0) !important;
-        -webkit-transform: translate3d(260px, 0, 0) !important;
-        transform: translate3d(260px, 0, 0) !important;
-    }
-
-    .newsletter-header span {
-        font-size: 15px;
-        font-weight: bold;
-    }
-
-    #newsletter-subscription .form-submit {
-        font-size: 1.3rem;
-    }
-}
-
 @media (max-width: 640px) {
 
     .page-header{
@@ -162,6 +143,14 @@
 
     #newsletter-subscription .form-item {
         margin: 10px auto;
+    }
+
+    #newsletter-subscription .form-item {
+        width: 250px !important;
+    }
+
+    #edit-mergevars-email {
+        width: 250px !important;
     }
 
     #newsletter-subscription .form-submit {
@@ -504,5 +493,32 @@
 
     #mailchimp-signup-subscribe-block-NaranXandul-form .form-submit {
         width: 80%;
+    }
+}
+
+@media (max-width: 325px) {
+    .mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened ~ .mm-slideout {
+        -webkit-transform: translate(260px, 0) !important;
+        -ms-transform: translate(260px, 0) !important;
+        transform: translate(260px, 0) !important;
+        -webkit-transform: translate3d(260px, 0, 0) !important;
+        transform: translate3d(260px, 0, 0) !important;
+    }
+
+    .newsletter-header span {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #newsletter-subscription .form-submit {
+        font-size: 1.3rem;
+    }
+
+    #newsletter-subscription .form-item {
+        width: 200px !important;
+    }
+
+    #edit-mergevars-email {
+        width: 200px !important;
     }
 }
