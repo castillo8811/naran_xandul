@@ -362,6 +362,27 @@ ul.menu {
     clear: both;
 }
 
+.nombres-content{
+    margin-bottom: 30px;
+}
+
+.nombres-article{
+    height: 180px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.nombres-article a{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    width: 90%;
+}
+
 .nodelist-audiolink a {
     color: white;
 }
@@ -1046,7 +1067,7 @@ ul.menu {
 }
 
 
-.view-display-id-nombres_indice a {
+.view-display-id-nombres_indice a, .nombres-glosary a {
     margin: 10px 5px 20px 2px;
     padding: 7px 11px;
     border: solid 1px gray;
@@ -1060,9 +1081,9 @@ ul.menu {
     text-align: center;
 }
 
-.view-display-id-nombres_page .view-display-id-nombres_indice{
-    padding: 20px;
-    /*background: url('../images/img_colores.jpg');*/
+.view-display-id-nombres_page .view-display-id-nombres_indice, .nombres-glosary{
+    padding: 5px 20px;
+    background: url('../images/img_colores.jpg');
 }
 
 .view-display-id-nombres_page h3 {
@@ -1070,6 +1091,10 @@ ul.menu {
     font-size: 5rem;
     text-align: left;
     !important;
+}
+
+.more-names{
+    margin-top: 50px;
 }
 
 .glossary-row-item {
