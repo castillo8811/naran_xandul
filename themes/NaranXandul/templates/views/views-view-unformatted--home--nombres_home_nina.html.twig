@@ -1,0 +1,20 @@
+<div>
+    <div class="pleca-seccion">
+        <span class="category-nombres"></span><a href="/nombres" class="text-upper">Nombres de niña</a>
+    </div>
+    <div class="nombres-content">
+        {% for index, row in rows %}
+            {% set row_classes = [
+                default_row_class ? 'views-row',
+                'panel',
+                'panel-default',
+            ] %}
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                {{ row.content }}
+            </div>
+        {% endfor %}
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
