@@ -1097,6 +1097,19 @@ ul.menu {
     margin-top: 50px;
 }
 
+.nombres-genero{
+    margin-bottom: 20px;
+}
+
+.nombres-genero a{
+    color:black;
+    font-size: 24px;
+}
+
+.nombres-genero-item{
+    margin-bottom: 20px;
+}
+
 .glossary-row-item {
     padding: 15px 5px 4px 0px;
     border-bottom: solid 1px lightgray;
