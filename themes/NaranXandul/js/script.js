@@ -87,7 +87,7 @@ jQuery(document).ready(function(){
         ]
     });
 
-    jQuery('#nombres .carrousel, #cursos .carrousel, #frases .carrousel').slick({
+    jQuery('#nombres .carrousel, #cursos .carrousel, #frases .carrousel, #nombres-home .carrousel').slick({
         slidesToShow: 3,
         slidesToScroll:3,
         dots: true,
