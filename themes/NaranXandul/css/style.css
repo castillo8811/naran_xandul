@@ -381,6 +381,21 @@ ul.menu {
     transform: translate(-50%, -50%);
     font-size: 22px;
     width: 90%;
+    color: inherit !important;
+}
+
+.cursos-image{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.cursos-text{
+    margin: 40px 0 40px;
+}
+
+.cursos-text p{
+    margin: 20px 10px 30px;
 }
 
 .nodelist-audiolink a {
@@ -430,6 +445,35 @@ ul.menu {
 
 #cursos h3 {
     text-align: center;
+}
+
+
+.questions-courses{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.questions-courses h2{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.pregunta-item{
+    margin-bottom: 25px;
+    border-bottom: solid 1px lightgrey;
+}
+
+.pregunta-item .plus, .pregunta-item .minus{
+    cursor: pointer;
+}
+
+.pregunta-text{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.pregunta-answer{
+    padding: 20px;
 }
 
 .curso-link {

@@ -133,4 +133,17 @@ jQuery(document).ready(function(){
 
     jQuery(".mm-searchfield__input input").attr("placeholder","Buscar");
 
+    jQuery('.pregunta-item .plus').click(function(){
+        jQuery(this).parent().parent().find('.pregunta-answer').eq(0).removeClass('hidden').slideDown();
+        jQuery(this).parent().parent().find('.minus').eq(0).removeClass('hidden');
+        jQuery(this).parent().parent().find('.plus').eq(0).addClass('hidden');
+
+    });
+
+    jQuery('.pregunta-item .minus').click(function(){
+        jQuery(this).parent().parent().find('.pregunta-answer').eq(0).addClass('hidden').slideDown();
+        jQuery(this).parent().parent().find('.minus').eq(0).addClass('hidden');
+        jQuery(this).parent().parent().find('.plus').eq(0).removeClass('hidden');
+
+    });
 });
