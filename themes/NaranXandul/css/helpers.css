@@ -792,3 +792,16 @@ em, i {
 #newsletter-subscription .banner, #more-news .banner {
     max-height: 250px !important;
 }
+
+
+.np-l{
+    padding-left: 0 !important;
+}
+
+.np-r{
+    padding-right: 0 !important;
+}
+
+.npadding{
+    padding: 0 !important;
+}
