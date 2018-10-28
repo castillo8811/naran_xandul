@@ -299,6 +299,11 @@ ul.menu {
     margin-bottom: 50px;
 }
 
+.category-cursos-item{
+    margin-bottom: 10px;
+    display: block;
+}
+
 .nodeList-category, .nodeList-autor {
     text-align: center;
     color: dimgray;
