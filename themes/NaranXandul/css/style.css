@@ -295,6 +295,10 @@ ul.menu {
     margin-top: 5px;
 }
 
+.cursos-block-wrapper{
+    margin-bottom: 50px;
+}
+
 .nodeList-category, .nodeList-autor {
     text-align: center;
     color: dimgray;
