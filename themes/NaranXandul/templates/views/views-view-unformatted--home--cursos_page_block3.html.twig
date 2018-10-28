@@ -1,0 +1,18 @@
+<div class="cursos-page-block">
+    <div class="pleca-seccion">
+        <span class="category-cursos"></span><a href="/cursos" class="text-center">Cursos</a>
+    </div>
+    <div class="carrousel">
+        {% for row in rows %}
+            {% set row_classes = [
+            default_row_class ? 'views-row',
+            'panel',
+            'panel-default',
+            ] %}
+
+            <div class="curso-item col-sm-4">
+                {{ row.content }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
