@@ -5,6 +5,10 @@
 
     }
 
+    .view-display-id-nombres_indice{
+      text-align: center !important;
+    }
+
     #stage .stage-title a {
         font-size: 1.8rem !important;
         color: #000000;
