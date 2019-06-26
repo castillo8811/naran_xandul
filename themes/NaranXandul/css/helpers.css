@@ -175,6 +175,12 @@
     height: 25px;
 }
 
+.category-cuentos-gris {
+  background: url('../images/iconos_secciones_gris.png') no-repeat -1px -304px;
+  width: 35px;
+  height: 25px;
+}
+
 .text-center{
     text-align: center !important;
 }
