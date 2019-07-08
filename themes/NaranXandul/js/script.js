@@ -87,6 +87,17 @@ jQuery(document).ready(function(){
         ]
     });
 
+  var ga_sended=false;
+  jQuery(window).scroll(function(){
+    var aTop = jQuery('#fb-comments').offset().top;
+    if(jQuery(this).scrollTop()>=aTop){
+      if(!ga_sended) {
+        ga("send", "pageview");
+        ga_sended=true;
+      }
+    }
+  });
+
     jQuery('#nombres .carrousel, #cursos .carrousel, #frases .carrousel, #nombres-home .carrousel, .cursos-page-block .carrousel').slick({
         slidesToShow: 3,
         slidesToScroll:3,
