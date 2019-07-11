@@ -181,6 +181,12 @@
   height: 25px;
 }
 
+.category-frases-gris {
+  background: url('../images/iconos_secciones_gris.png') no-repeat -1px -334px;
+  width: 35px;
+  height: 32px;
+}
+
 .text-center{
     text-align: center !important;
 }
