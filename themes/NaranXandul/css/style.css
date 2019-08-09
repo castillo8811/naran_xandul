@@ -1258,3 +1258,13 @@ ul.menu {
 #last-news-3{
     margin-top: 50px;
 }
+
+.ad-billboard{
+  margin:10x auto 10px;
+  display:block;
+}
+
+.ad-box{
+  margin:10x auto 10px;
+  display:block;
+}
