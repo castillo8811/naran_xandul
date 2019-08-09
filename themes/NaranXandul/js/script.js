@@ -89,11 +89,13 @@ jQuery(document).ready(function(){
 
   var ga_sended=false;
   jQuery(window).scroll(function(){
-    var aTop = jQuery('#fb-comments').offset().top;
-    if(jQuery(this).scrollTop()>=aTop){
-      if(!ga_sended) {
-        ga("send", "pageview");
-        ga_sended=true;
+    if(jQuery('#fb-comments').length) {
+      var aTop = jQuery('#fb-comments').offset().top;
+      if (jQuery(this).scrollTop() >= aTop) {
+        if (!ga_sended) {
+          ga("send", "pageview");
+          ga_sended = true;
+        }
       }
     }
   });
