@@ -1260,13 +1260,14 @@ ul.menu {
 }
 
 .ad-billboard{
-  margin:10px auto 10px !important;
+  margin:10px auto 0px !important;
   display:block;
 }
 
 .ad-billboard div, .ad-billboard iframe{
   margin:0 auto !important;
   display:block;
+  text-align: center;
 }
 
 .ad-box{
@@ -1277,4 +1278,5 @@ ul.menu {
 .ad-box div, .ad-box iframe{
   margin:0 auto !important;
   display:block;
+  text-align: center;
 }
