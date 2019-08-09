@@ -1260,11 +1260,21 @@ ul.menu {
 }
 
 .ad-billboard{
-  margin:10x auto 10px;
+  margin:10px auto 10px !important;
+  display:block;
+}
+
+.ad-billboard div, .ad-billboard iframe{
+  margin:0 auto !important;
   display:block;
 }
 
 .ad-box{
-  margin:10x auto 10px;
+  margin:10px auto 10px !important;
+  display:block;
+}
+
+.ad-box div, .ad-box iframe{
+  margin:0 auto !important;
   display:block;
 }
