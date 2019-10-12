@@ -21,3 +21,9 @@
   {% endfor %}
   <div class="clear"></div>
 </div>
+
+<script>
+  fbq('track', 'ViewContent', {
+    value: {{ category_name }},
+  });
+</script>
