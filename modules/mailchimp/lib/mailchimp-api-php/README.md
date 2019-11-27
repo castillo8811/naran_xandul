@@ -1,11 +1,11 @@
-# PHP library for v3 of the MailChimp API
+# PHP library for v3 of the Mailchimp API
 
-This library provides convenient wrapper functions for MailChimp's REST API.
+This library provides convenient wrapper functions for Mailchimp's REST API.
 The API is [documented here](http://developer.mailchimp.com/documentation/mailchimp/guides/get-started-with-mailchimp-api-3/).
 
 ## Requirements
 
-- PHP 5.4.0 or greater
+- PHP 5.4.0 or greater (7.0 or greater if you wish to use phpunit)
 - [Composer](https://getcomposer.org/)
 - [Guzzle](https://github.com/guzzle/guzzle)
 
@@ -13,6 +13,10 @@ The API is [documented here](http://developer.mailchimp.com/documentation/mailch
 
 Dependencies are managed by [Composer](https://getcomposer.org/). After
 installing Composer, run the following command from the library root:
+
+`composer install --no-dev --ignore-platform-reqs`
+
+Or to install with phpunit:
 
 `composer install`
 
@@ -39,8 +43,8 @@ Then run PHPUnit:
 
 `phpunit`
 
-### MailChimp API Playground
+### Mailchimp API Playground
 
-MailChimp's [API Playground](https://us1.api.mailchimp.com/playground/) provides
+Mailchimp's [API Playground](https://us1.api.mailchimp.com/playground/) provides
 access to all API methods via a web-based UI. You can use this to test API calls
-and review data you've sent to MailChimp.
+and review data you've sent to Mailchimp.

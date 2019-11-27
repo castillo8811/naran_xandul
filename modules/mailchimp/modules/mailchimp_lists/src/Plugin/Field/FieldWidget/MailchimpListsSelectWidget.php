@@ -3,6 +3,7 @@
 namespace Drupal\mailchimp_lists\Plugin\Field\FieldWidget;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -17,7 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  *     "mailchimp_lists_subscription"
  *   },
  *   settings = {
- *     "placeholder" = "Select a MailChimp List."
+ *     "placeholder" = "Select a Mailchimp List."
  *   }
  * )
  */
@@ -40,6 +41,9 @@ class MailchimpListsSelectWidget extends WidgetBase {
       }
     }
 
+    // Load the Mailchimp list from the field's list ID.
+    $mc_list = mailchimp_get_list($this->fieldDefinition->getSetting('mc_list_id'));
+
     $element += array(
       '#title' => Html::escape($element['#title']),
       '#type' => 'fieldset',
@@ -48,16 +52,33 @@ class MailchimpListsSelectWidget extends WidgetBase {
     $element['subscribe'] = array(
       '#title' => $this->fieldDefinition->getSetting('subscribe_checkbox_label') ?: $this->t('Subscribe'),
       '#type' => 'checkbox',
-      '#default_value' => ($subscribe_default)? TRUE : $this->fieldDefinition->isRequired(),
+      '#default_value' => ($subscribe_default) ? TRUE : $this->fieldDefinition->isRequired(),
       '#required' => $this->fieldDefinition->isRequired(),
       '#disabled' => $this->fieldDefinition->isRequired(),
     );
 
-    $form_id = $form_state->getFormObject()->getFormId();
-
+    // TRUE if interest groups are enabled for this list.
     $show_interest_groups = $this->fieldDefinition->getSetting('show_interest_groups');
+    // TRUE if interest groups are enabled but hidden from the user.
     $interest_groups_hidden = $this->fieldDefinition->getSetting('interest_groups_hidden');
+    // TRUE if widget is being used to set default values via admin form.
     $is_default_value_widget = $this->isDefaultValueWidget($form_state);
+
+    // Hide the Subscribe checkbox if:
+    // - The form is not being used to configure default values.
+    // - The field is configured to show interest groups.
+    // - The field is configured to hide the Subscribe checkbox.
+    // - The list has at least one interest group.
+    // This allows users to skip the redundant step of checking the Subscribe
+    // checkbox when also checking interest group checkboxes.
+    if (!$is_default_value_widget && $show_interest_groups && $this->fieldDefinition->getSetting('hide_subscribe_checkbox') && !empty($mc_list->intgroups)) {
+      $element['subscribe']['#access'] = FALSE;
+      $interest_group_element_type = 'container';
+    }
+    else {
+      $interest_group_element_type = 'fieldset';
+    }
+
     if ($show_interest_groups || $is_default_value_widget) {
       $mc_list = mailchimp_get_list($instance->getFieldDefinition()->getSetting('mc_list_id'));
 
@@ -66,7 +87,7 @@ class MailchimpListsSelectWidget extends WidgetBase {
       }
       else {
         $element['interest_groups'] = array(
-          '#type' => 'fieldset',
+          '#type' => $interest_group_element_type,
           '#title' => Html::escape($instance->getFieldDefinition()->getSetting('interest_groups_label')),
           '#weight' => 100,
           '#states' => array(
@@ -95,7 +116,26 @@ class MailchimpListsSelectWidget extends WidgetBase {
       }
     }
 
-    return array('value' => $element);
+    // Make a distinction between whether the field is edited by the system or the user.
+    // This is important to prevent unwanted subscription overwrites.
+    $build_info = $form_state->getBuildInfo();
+    if ($build_info['callback_object'] instanceof EntityFormInterface &&  $build_info['callback_object']->getOperation() == 'edit') {
+
+      // The field is set from an edited via the UI.
+      $element['allow_unsubscribe'] = array(
+        '#type' => 'value',
+        '#value' => TRUE,
+      );
+    }
+    else {
+      // The field is NOT set from an edit.
+      $element['allow_unsubscribe'] = array(
+        '#type' => 'value',
+        '#value' => FALSE,
+      );
+    }
+
+    return $element;
   }
 
 }
