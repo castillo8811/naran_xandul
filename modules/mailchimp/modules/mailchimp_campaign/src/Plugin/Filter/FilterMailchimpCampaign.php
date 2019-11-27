@@ -6,11 +6,11 @@ use Drupal\filter\FilterProcessResult;
 use Drupal\filter\Plugin\FilterBase;
 
 /**
- * Provides a filter to add content to and convert URLs for MailChimp campaigns.
+ * Provides a filter to add content to and convert URLs for Mailchimp campaigns.
  *
  * @Filter(
  *   id = "filter_mailchimp_campaign",
- *   title = @Translation("MailChimp Campaign filter"),
+ *   title = @Translation("Mailchimp Campaign filter"),
  *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
  *   settings = {}
  * )
@@ -74,7 +74,7 @@ class FilterMailchimpCampaign extends FilterBase {
    * {@inheritdoc}
    */
   public function tips($long = FALSE) {
-    $tip = t('Converts content tokens in the format %pattern into the appropriate rendered content and makes all paths absolute. Use the "Insert Site Content" widget below to generate tokens.',
+    $tip = $this->t('Converts content tokens in the format %pattern into the appropriate rendered content and makes all paths absolute. Use the "Insert Site Content" widget below to generate tokens.',
       array('%pattern' => '[mailchimp_campaign|entity_type=node|entity_id=1|view_mode=teaser]')
     );
 

@@ -3,7 +3,7 @@
 namespace Mailchimp\Tests;
 
 /**
- * MailChimp Reports library test cases.
+ * Mailchimp Reports library test cases.
  *
  * @package Mailchimp\Tests
  */
@@ -13,7 +13,7 @@ class MailchimpReports extends \Mailchimp\MailchimpReports {
    * @inheritdoc
    */
   public function __construct($api_key = 'apikey', $api_user = 'apikey', $http_options = []) {
-    $this->client = new Client();
+    $this->client = new MailchimpTestHttpClient();
   }
 
   public function getClient() {

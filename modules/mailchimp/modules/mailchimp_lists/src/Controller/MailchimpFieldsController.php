@@ -3,13 +3,41 @@
 namespace Drupal\mailchimp_lists\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * MailChimp Fields controller.
+ * Mailchimp Fields controller.
  */
 class MailchimpFieldsController extends ControllerBase {
+
+  /**
+   * The entity field manager.
+   *
+   * @var \Drupal\Core\Entity\EntityFieldManagerInterface
+   */
+  protected $entityFieldManager;
+
+  /**
+   * Initializes a MailchimpCampaignController.
+   *
+   * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
+   *   The entity field manager..
+   */
+  public function __construct(EntityFieldManagerInterface $entity_field_manager) {
+    $this->entityFieldManager = $entity_field_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_field.manager')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -18,28 +46,28 @@ class MailchimpFieldsController extends ControllerBase {
     $content = array();
 
     $content['description'] = array(
-      '#markup' => t('This displays a list of all Mailchimp Subscription Fields
+      '#markup' => $this->t('This displays a list of all Mailchimp Subscription Fields
         configured on your system, with a row for each unique Instance of that field.
         To edit each field\'s settings, go to the Entity Bundle\'s configuration
         screen and use the Field UI.
-        When entities with MailChimp Subscription Fields are updated,
+        When entities with Mailchimp Subscription Fields are updated,
         the Merge Variables configured through Field UI are automatically updated if necessary.
-        However, if you have existing subscribers on MailChimp and matching Entities
+        However, if you have existing subscribers on Mailchimp and matching Entities
         on Drupal when you configure your Merge Variables, the existing values
         are not synced automatically, as this could be a slow process.
         You can manually force updates of all existing Merge Values to existing
-        MailChimp subscribers for each field configuration using the \'Batch Update\'
-        option on this table. The MailChimp Subscription Field is provided by the
-        Mailchimp Lists (mailchimp_lists) module.')
+        Mailchimp subscribers for each field configuration using the \'Batch Update\'
+        option on this table. The Mailchimp Subscription Field is provided by the
+        Mailchimp Audiences (mailchimp_lists) module.')
     );
 
     $content['fields_table'] = array(
       '#type' => 'table',
-      '#header' => array(t('Entity Type'), t('Bundle'), t('Field'), t('Batch Update'),),
+      '#header' => array($this->t('Entity Type'), $this->t('Bundle'), $this->t('Field'), $this->t('Batch Update'),),
       '#empty' => '',
     );
 
-    $field_map = \Drupal::entityManager()->getFieldMap();
+    $field_map = $this->entityFieldManager->getFieldMap();
 
     $row_id = 1;
     foreach ($field_map as $entity_type => $fields) {
@@ -63,7 +91,7 @@ class MailchimpFieldsController extends ControllerBase {
               '#markup' => $field_name,
             );
             $content['fields_table'][$row_id]['batch_update'] = array(
-              '#markup' => Link::fromTextAndUrl(t('Update Mailchimp Mergevar Values'), $batch_update_url)->toString(),
+              '#markup' => Link::fromTextAndUrl($this->t('Update Mailchimp Mergevar Values'), $batch_update_url)->toString(),
             );
 
             $row_id++;
