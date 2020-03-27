@@ -87,17 +87,22 @@ view_mode ? view_mode|clean_class,
 
   <div id="social-shares" class="block">
     <div id="social-shares-inner" class="col-sm-12 col-md-12 col-xs-12">
-      <div id="fb-share" class="col-lg-4 col-xs-4">
+      <div id="fb-share" class="col-lg-3 col-xs-3">
         <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?app_id=1855953211331152&sdk=joey&u={{ url('<current>') }}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')"></a>
         <span></span>
       </div>
-      <div id="tw-share" class="col-lg-4 col-xs-4">
+      <div id="tw-share" class="col-lg-3 col-xs-3">
         <a class="block" target="_blank" href="http://twitter.com/home?status=Estoy leyendo {{ url('<current>') }} ">
           <span></span>
         </a>
       </div>
-      <div id="whatsapp-share" class="col-lg-4 col-xs-4">
+      <div id="whatsapp-share" class="col-lg-3 col-xs-3">
         <a class="block loader-none" href="whatsapp://send?text=Mira que estoy leyendo en {{ url('<current>') }}">
+          <span></span>
+        </a>
+      </div>
+      <div id="pinterest-share" class="col-lg-3 col-xs-3">
+        <a class="block loader-none" href="http://pinterest.com/pin/create/button/?url={{ url('<current>') }}">
           <span></span>
         </a>
       </div>
@@ -146,19 +151,28 @@ view_mode ? view_mode|clean_class,
   <div{{ content_attributes.addClass('node-body') }}>
     {{ content.body }}
   </div>
+  <div class="node-tags">
+    <ul>
+    {% for key, item in content.field_tags if key|first != '#' %}
+      <li class="tag-item">{{ item }}</li>
+    {% endfor %}
+    </ul>
+  </div>
     {% if display_submitted %}
       <footer id="node-author-section">
         <div class="node-author-section col-md-5 col-xs-8">
+          <!--
           <div class="node-autor-image pull-left col-md-3 col-xs-5">
               {{ author_picture }}
           </div>
+          -->
           <div{{ author_attributes.addClass('pull-left') }}>
-            <span class="node-autor text-xs-center">{{ author_name }}</span>
+            <span class="node-autor text-xs-center">Por&nbsp;{{ author_name }}</span>
               {{ metadata }}
           </div>
           <div class="clearfix"></div>
         </div>
-        <span class="node-date text-xs-center">Última actualización: {{ date }}</span>
+        <span class="node-date text-xs-center">{{ date }}</span>
         <div class="clearfix"></div>
       </footer>
     {% endif %}

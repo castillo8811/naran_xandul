@@ -1,3 +1,7 @@
+.box-banner{
+  display:none;
+}
+
 a {
     text-decoration: none !important;
 }
@@ -790,10 +794,12 @@ ul.menu {
     display: block;
 }
 
-.node-autor a{
-    color: #b6b6b6;
+.node-autor, .node-autor a{
+    color: black;
     text-transform: capitalize;
+    font-weight: bold;
 }
+
 
 .node-title {
     text-align: center;
@@ -1069,6 +1075,16 @@ ul.menu {
     margin-bottom: 10px;
 }
 
+#pinterest-share {
+  height: 65px;
+  background-color: white;
+  background: white url(../images/btn_share_pinterest.png) no-repeat;
+  background-position: center;
+  float: left;
+  background-size: 25%;
+  margin-bottom: 10px;
+}
+
 #social-shares a {
     width: 100%;
     height: 70px;
@@ -1240,6 +1256,12 @@ ul.menu {
     display: none;
 }
 
+.path-frontpage .col-sm-8{
+  width: 100% !important;
+}
+
+
+
 .nodeList-autor{
     display: none;
 }
@@ -1279,4 +1301,29 @@ ul.menu {
   margin:0 auto !important;
   display:block;
   text-align: center;
+}
+
+.spotify{
+  width: 350px;
+  display: block;
+  margin: 0 auto;
+}
+
+.spotify img{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.node-tags .tag-item{
+  padding: 5px 10px;
+  background: lightgray;
+  color:black;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.node-tags .tag-item a{
+  color:black;
+  font-weight: bold;
 }

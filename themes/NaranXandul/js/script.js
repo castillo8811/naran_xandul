@@ -138,6 +138,8 @@ jQuery(document).ready(function(){
     jQuery("#social-shares").sticky({ topSpacing: 0 });
   }
 
+  jQuery('.node-body a').attr('target', '_blank');
+
 
       jQuery('.mm-listitem').each(function(){
           category=jQuery(this).find('a').eq(0).attr('href');
