@@ -2,7 +2,7 @@
 
 namespace Drupal\Tests\video_embed_field\FunctionalJavascript;
 
-use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
+use Drupal\FunctionalJavascriptTests\JavascriptTestBase;
 use Drupal\Tests\video_embed_field\Functional\EntityDisplaySetupTrait;
 
 /**
@@ -10,7 +10,7 @@ use Drupal\Tests\video_embed_field\Functional\EntityDisplaySetupTrait;
  *
  * @group video_embed_field
  */
-class ColorboxFormatterTest extends WebDriverTestBase {
+class ColorboxFormatterTest extends JavascriptTestBase {
 
   use EntityDisplaySetupTrait;
 
@@ -52,8 +52,8 @@ class ColorboxFormatterTest extends WebDriverTestBase {
     $this->getSession()->wait(static::COLORBOX_LAUNCH_TIME);
     $this->assertSession()->elementExists('css', '#colorbox .video-embed-field-responsive-video');
     // Make sure the right library files are loaded on the page.
-    $this->assertSession()->elementExists('css', 'link[href*="colorbox_style.css"]');
-    $this->assertSession()->elementExists('css', 'link[href*="video_embed_field.responsive-video.css"]');
+    $this->assertSession()->elementContains('css', 'style', 'colorbox/styles/default/colorbox_style.css');
+    $this->assertSession()->elementContains('css', 'style', 'video_embed_field/css/video_embed_field.responsive-video.css');
   }
 
 }

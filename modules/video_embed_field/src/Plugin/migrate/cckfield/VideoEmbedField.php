@@ -4,7 +4,7 @@ namespace Drupal\video_embed_field\Plugin\migrate\cckfield;
 
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
-use Drupal\migrate_drupal\Plugin\migrate\field\FieldPluginBase;
+use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * Plugin to migrate from the Drupal 7 video_embed_field module.
@@ -16,7 +16,7 @@ use Drupal\migrate_drupal\Plugin\migrate\field\FieldPluginBase;
  *   destination_module = "video_embed_field",
  * )
  */
-class VideoEmbedField extends FieldPluginBase {
+class VideoEmbedField extends CckFieldPluginBase {
 
   /**
    * {@inheritdoc}
@@ -48,9 +48,9 @@ class VideoEmbedField extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function defineValueProcessPipeline(MigrationInterface $migration, $field_name, $data) {
+  public function processCckFieldValues(MigrationInterface $migration, $field_name, $data) {
     $process = [
-      'plugin' => 'sub_process',
+      'plugin' => 'iterator',
       'source' => $field_name,
       'process' => [
         'value' => 'video_url',

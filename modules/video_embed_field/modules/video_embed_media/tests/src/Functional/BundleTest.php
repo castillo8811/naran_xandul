@@ -2,7 +2,7 @@
 
 namespace Drupal\Tests\video_embed_media\Functional;
 
-use Drupal\Tests\media\Functional\MediaFunctionalTestBase;
+use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\video_embed_field\Functional\AdminUserTrait;
 
 /**
@@ -10,7 +10,7 @@ use Drupal\Tests\video_embed_field\Functional\AdminUserTrait;
  *
  * @group video_embed_media
  */
-class BundleTest extends MediaFunctionalTestBase {
+class BundleTest extends BrowserTestBase {
 
   use AdminUserTrait;
 
@@ -22,36 +22,26 @@ class BundleTest extends MediaFunctionalTestBase {
   public static $modules = [
     'video_embed_field',
     'video_embed_media',
+    'media_entity',
+    'field_ui',
+    'node',
+    'image',
   ];
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    parent::setUp();
-  }
 
   /**
    * Test the dialog form.
    */
   public function testMediaBundleCreation() {
-    $this->drupalLogin($this->adminUser);
+    $this->drupalLogin($this->createAdminUser());
 
-    // Create bundle and modify form display.
-    $media_type = $this->createMediaType('video_embed_field', ['bundle' => 'video_bundle']);
-    $source = $media_type->getSource();
-    $source_field = $source->getSourceFieldDefinition($media_type);
-    if ($source_field->isDisplayConfigurable('form')) {
-      // Use the default widget and settings.
-      $component = \Drupal::service('plugin.manager.field.widget')
-        ->prepareConfiguration('video_embed_field', []);
-
-      // @todo Replace entity_get_form_display() when #2367933 is done.
-      // https://www.drupal.org/node/2872159.
-      $this->container->get('entity_display.repository')->getFormDisplay('media', $media_type->id(), 'default')
-        ->setComponent($source_field->getName(), $component)
-        ->save();
-    }
+    // Create a new media bundle.
+    $this->drupalGet('admin/structure/media/add');
+    $this->submitForm([
+      'label' => 'Video Bundle',
+      'id' => 'video_bundle',
+      'type' => 'video_embed_field',
+    ], t('Save media bundle'));
+    $this->assertSession()->pageTextContains('The media bundle Video Bundle has been added.');
 
     // Ensure the video field is added to the media entity.
     $this->drupalGet('admin/structure/media/manage/video_bundle/fields');
@@ -66,6 +56,34 @@ class BundleTest extends MediaFunctionalTestBase {
     ], 'Save');
     // We should see the video thumbnail on the media page.
     $this->assertContains('video_thumbnails/XgYu7-DQjDQ.jpg', $this->getSession()->getPage()->getHtml());
+
+    // Add another field and change the configured media field.
+    $this->drupalGet('admin/structure/media/manage/video_bundle/fields/add-field');
+    $this->submitForm([
+      'new_storage_type' => 'video_embed_field',
+      'label' => 'New Video Field',
+      'field_name' => 'new_video_field',
+    ], 'Save and continue');
+    $this->submitForm([], t('Save field settings'));
+    $this->submitForm([], t('Save settings'));
+
+    // Update video source field.
+    $this->drupalGet('admin/structure/media/manage/video_bundle');
+    $this->submitForm([
+      'type_configuration[video_embed_field][source_field]' => 'field_new_video_field',
+    ], t('Save media bundle'));
+
+    // Create a video, populating both video URL fields.
+    $this->drupalGet('media/add/video_bundle');
+    $this->submitForm([
+      'name[0][value]' => 'Another Video!',
+      'field_media_video_embed_field[0][value]' => 'https://www.youtube.com/watch?v=XgYu7-DQjDQ',
+      'field_new_video_field[0][value]' => 'https://www.youtube.com/watch?v=gnERPdAiuSo',
+    ], t('Save'));
+
+    // We should see the newly configured video thumbnail, but not the original.
+    $this->assertContains('video_thumbnails/gnERPdAiuSo.jpg', $this->getSession()->getPage()->getHtml());
+    $this->assertNotContains('video_thumbnails/XgYu7-DQjDQ.jpg', $this->getSession()->getPage()->getHtml());
   }
 
 }
