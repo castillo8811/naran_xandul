@@ -1252,11 +1252,11 @@ ul.menu {
     color: grey;
  }
 
-.path-frontpage .sidebar-second{
+.path-frontpage .sidebar-second, .path-taxonomy .sidebar-second{
     display: none;
 }
 
-.path-frontpage .col-sm-8{
+.path-frontpage .col-sm-8, .path-taxonomy .col-sm-8{
   width: 100% !important;
 }
 
@@ -1315,8 +1315,17 @@ ul.menu {
   margin: 0 auto;
 }
 
+.node-tags{
+    margin-top: 20px;
+}
+
+.node-tags ul{
+    padding-left: 0 !important;
+}
+
+
 .node-tags .tag-item{
-  padding: 5px 10px;
+  padding: 1px 10px;
   background: lightgray;
   color:black;
   display: inline-block;
@@ -1326,4 +1335,5 @@ ul.menu {
 .node-tags .tag-item a{
   color:black;
   font-weight: bold;
+  font-size:14px
 }
