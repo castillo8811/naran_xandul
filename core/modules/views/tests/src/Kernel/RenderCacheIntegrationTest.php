@@ -98,7 +98,6 @@ class RenderCacheIntegrationTest extends ViewsKernelTestBase {
     $this->assertViewsCacheTags($view, $base_tags, $do_assert_views_caches, $base_tags);
     $this->assertViewsCacheTagsFromStaticRenderArray($view, $base_tags, $do_assert_views_caches);
 
-
     // Non-empty result (1 entity).
     /** @var \Drupal\Core\Entity\EntityInterface[] $entities */
     $entities[] = $entity = EntityTest::create();
@@ -108,7 +107,6 @@ class RenderCacheIntegrationTest extends ViewsKernelTestBase {
     $tags_with_entity = Cache::mergeTags($base_tags, $entities[0]->getCacheTags());
     $this->assertViewsCacheTags($view, $tags_with_entity, $do_assert_views_caches, $tags_with_entity);
     $this->assertViewsCacheTagsFromStaticRenderArray($view, $tags_with_entity, $do_assert_views_caches);
-
 
     // Paged result (more entities than the items-per-page limit).
     for ($i = 0; $i < 5; $i++) {
@@ -147,7 +145,7 @@ class RenderCacheIntegrationTest extends ViewsKernelTestBase {
     // @todo Static render arrays don't support different pages yet, see
     //   https://www.drupal.org/node/2500701.
     // $this->assertViewsCacheTagsFromStaticRenderArray($view, $tags_page_2, $do_assert_views_caches);
-    $this->assertTrue(strpos($build['#markup'], $random_name) !== FALSE);
+    $this->assertContains($random_name, (string) $build['#markup']);
     $view->destroy();
 
     $this->pass('Page 1');
@@ -157,14 +155,14 @@ class RenderCacheIntegrationTest extends ViewsKernelTestBase {
     $entities[1]->save();
     $build = $this->assertViewsCacheTags($view, $tags_page_1, $do_assert_views_caches, $tags_page_1);
     $this->assertViewsCacheTagsFromStaticRenderArray($view, $tags_page_1, $do_assert_views_caches);
-    $this->assertTrue(strpos($build['#markup'], $random_name) !== FALSE);
+    $this->assertContains($random_name, (string) $build['#markup']);
     $view->destroy();
 
     // Setup arguments to ensure that render caching also varies by them.
     $this->pass('Test arguments');
 
     // Custom assert for a single result row.
-    $single_entity_assertions = function(array $build, EntityInterface $entity) {
+    $single_entity_assertions = function (array $build, EntityInterface $entity) {
       $this->setRawContent($build['#markup']);
 
       $result = $this->cssSelect('div.views-row');
@@ -258,7 +256,6 @@ class RenderCacheIntegrationTest extends ViewsKernelTestBase {
     $render_tags_with_entity = Cache::mergeTags($render_tags_with_entity, ['entity_test_view']);
     $this->assertViewsCacheTags($view, $result_tags_with_entity, $do_assert_views_caches, $render_tags_with_entity);
     $this->assertViewsCacheTagsFromStaticRenderArray($view, $render_tags_with_entity, $do_assert_views_caches);
-
 
     // Paged result (more entities than the items-per-page limit).
     for ($i = 0; $i < 5; $i++) {

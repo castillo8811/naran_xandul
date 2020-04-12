@@ -19,6 +19,11 @@ class ForumNodeAccessTest extends BrowserTestBase {
    */
   public static $modules = ['node', 'comment', 'forum', 'taxonomy', 'tracker', 'node_access_test', 'block'];
 
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
+
   protected function setUp() {
     parent::setUp();
     node_access_rebuild();
@@ -60,7 +65,6 @@ class ForumNodeAccessTest extends BrowserTestBase {
     $this->drupalPostForm('node/add/forum', $edit, t('Save'), ['query' => ['forum_id' => 1]]);
     $public_node = $this->drupalGetNodeByTitle($public_node_title);
     $this->assertTrue(!empty($public_node), 'New public forum node found in database.');
-
 
     // Enable the new and active forum blocks.
     $this->drupalPlaceBlock('forum_active_block');

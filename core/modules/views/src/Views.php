@@ -119,7 +119,7 @@ class Views {
    *   A view executable instance, from the loaded entity.
    */
   public static function getView($id) {
-    $view = \Drupal::service('entity.manager')->getStorage('view')->load($id);
+    $view = \Drupal::entityTypeManager()->getStorage('view')->load($id);
     if ($view) {
       return static::executableFactory()->get($view);
     }
@@ -242,7 +242,7 @@ class Views {
    *   An array of loaded view entities.
    */
   public static function getAllViews() {
-    return \Drupal::entityManager()->getStorage('view')->loadMultiple();
+    return \Drupal::entityTypeManager()->getStorage('view')->loadMultiple();
   }
 
   /**
@@ -256,7 +256,7 @@ class Views {
       ->condition('status', TRUE)
       ->execute();
 
-    return \Drupal::entityManager()->getStorage('view')->loadMultiple($query);
+    return \Drupal::entityTypeManager()->getStorage('view')->loadMultiple($query);
   }
 
   /**
@@ -270,7 +270,7 @@ class Views {
       ->condition('status', FALSE)
       ->execute();
 
-    return \Drupal::entityManager()->getStorage('view')->loadMultiple($query);
+    return \Drupal::entityTypeManager()->getStorage('view')->loadMultiple($query);
   }
 
   /**
@@ -512,7 +512,7 @@ class Views {
       throw new \Exception('Invalid plugin type used. Valid types are "plugin" or "handler".');
     }
 
-    return array_keys(array_filter(static::$plugins, function($plugin_type) use ($type) {
+    return array_keys(array_filter(static::$plugins, function ($plugin_type) use ($type) {
       return $plugin_type == $type;
     }));
   }

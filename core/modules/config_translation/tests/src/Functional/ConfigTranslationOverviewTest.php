@@ -31,6 +31,11 @@ class ConfigTranslationOverviewTest extends BrowserTestBase {
   ];
 
   /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
+
+  /**
    * Languages to enable.
    *
    * @var array
@@ -77,7 +82,7 @@ class ConfigTranslationOverviewTest extends BrowserTestBase {
     // Make sure there is only a single operation for each dropbutton, either
     // 'List' or 'Translate'.
     foreach ($this->cssSelect('ul.dropbutton') as $i => $dropbutton) {
-      $this->assertIdentical(1, count($dropbutton->find('xpath', 'li')));
+      $this->assertIdentical(1, count($dropbutton->findAll('xpath', 'li')));
       $this->assertTrue(($dropbutton->getText() === 'Translate') || ($dropbutton->getText() === 'List'));
     }
 
@@ -87,8 +92,9 @@ class ConfigTranslationOverviewTest extends BrowserTestBase {
       $this->randomString(),
     ];
 
+    $storage = \Drupal::entityTypeManager()->getStorage('config_test');
     foreach ($labels as $label) {
-      $test_entity = entity_create('config_test', [
+      $test_entity = $storage->create([
         'id' => $this->randomMachineName(),
         'label' => $label,
       ]);
@@ -102,20 +108,20 @@ class ConfigTranslationOverviewTest extends BrowserTestBase {
       // Make sure there is only a single 'Translate' operation for each
       // dropbutton.
       foreach ($this->cssSelect('ul.dropbutton') as $i => $dropbutton) {
-        $this->assertIdentical(1, count($dropbutton->find('xpath', 'li')));
+        $this->assertIdentical(1, count($dropbutton->findAll('xpath', 'li')));
         $this->assertIdentical('Translate', $dropbutton->getText());
       }
 
-      $entity_type = \Drupal::entityManager()->getDefinition($test_entity->getEntityTypeId());
+      $entity_type = \Drupal::entityTypeManager()->getDefinition($test_entity->getEntityTypeId());
       $this->drupalGet($base_url . '/translate');
 
-      $title = $test_entity->label() . ' ' . $entity_type->getLowercaseLabel();
+      $title = $test_entity->label() . ' ' . $entity_type->getSingularLabel();
       $title = 'Translations for <em class="placeholder">' . Html::escape($title) . '</em>';
       $this->assertRaw($title);
       $this->assertRaw('<th>' . t('Language') . '</th>');
 
       $this->drupalGet($base_url);
-      $this->assertLink(t('Translate @title', ['@title' => $entity_type->getLowercaseLabel()]));
+      $this->assertLink(t('Translate @title', ['@title' => $entity_type->getSingularLabel()]));
     }
   }
 
@@ -147,7 +153,7 @@ class ConfigTranslationOverviewTest extends BrowserTestBase {
     $original_label = 'Default';
     $overridden_label = 'Overridden label';
 
-    $config_test_storage = $this->container->get('entity.manager')->getStorage('config_test');
+    $config_test_storage = $this->container->get('entity_type.manager')->getStorage('config_test');
 
     // Set up an override.
     $settings['config']['config_test.dynamic.dotted.default']['label'] = (object) [

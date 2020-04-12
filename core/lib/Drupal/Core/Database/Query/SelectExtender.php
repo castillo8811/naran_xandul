@@ -25,11 +25,15 @@ class SelectExtender implements SelectInterface {
 
   /**
    * A unique identifier for this query object.
+   *
+   * @var string
    */
   protected $uniqueIdentifier;
 
   /**
    * The placeholder counter.
+   *
+   * @var int
    */
   protected $placeholder = 0;
 
@@ -466,6 +470,14 @@ class SelectExtender implements SelectInterface {
    */
   public function notExists(SelectInterface $select) {
     $this->query->notExists($select);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function alwaysFalse() {
+    $this->query->alwaysFalse();
     return $this;
   }
 

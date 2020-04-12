@@ -68,7 +68,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       $this->containerBuilder->getAliases()->willReturn([]);
       $this->containerBuilder->getParameterBag()->willReturn(new ParameterBag());
       $this->containerBuilder->getDefinitions()->willReturn(NULL);
-      $this->containerBuilder->isFrozen()->willReturn(TRUE);
+      $this->containerBuilder->isCompiled()->willReturn(TRUE);
 
       $definition = [];
       $definition['aliases'] = [];
@@ -147,7 +147,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
 
       $parameter_bag = new ParameterBag($parameters);
       $this->containerBuilder->getParameterBag()->willReturn($parameter_bag);
-      $this->containerBuilder->isFrozen()->willReturn($is_frozen);
+      $this->containerBuilder->isCompiled()->willReturn($is_frozen);
 
       if (isset($parameters['reference'])) {
         $definition = new Definition('\stdClass');
@@ -545,7 +545,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       $services['bar'] = $bar_definition;
 
       $this->containerBuilder->getDefinitions()->willReturn($services);
-      $this->setExpectedException(InvalidArgumentException::class);
+      $this->expectException(InvalidArgumentException::class);
       $this->dumper->getArray();
     }
 
@@ -562,7 +562,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       $services['bar'] = $bar_definition;
 
       $this->containerBuilder->getDefinitions()->willReturn($services);
-      $this->setExpectedException(RuntimeException::class);
+      $this->expectException(RuntimeException::class);
       $this->dumper->getArray();
     }
 
@@ -579,7 +579,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       $services['bar'] = $bar_definition;
 
       $this->containerBuilder->getDefinitions()->willReturn($services);
-      $this->setExpectedException(RuntimeException::class);
+      $this->expectException(RuntimeException::class);
       $this->dumper->getArray();
     }
 
@@ -596,8 +596,49 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       $services['bar'] = $bar_definition;
 
       $this->containerBuilder->getDefinitions()->willReturn($services);
-      $this->setExpectedException(RuntimeException::class);
+      $this->expectException(RuntimeException::class);
       $this->dumper->getArray();
+    }
+
+    /**
+     * Tests that service arguments with escaped percents are correctly dumped.
+     *
+     * @dataProvider percentsEscapeProvider
+     */
+    public function testPercentsEscape($expected, $argument) {
+      $this->containerBuilder->getDefinitions()->willReturn([
+        'test' => new Definition('\stdClass', [$argument]),
+      ]);
+
+      $dump = $this->dumper->getArray();
+
+      $this->assertEquals($this->serializeDefinition([
+        'class' => '\stdClass',
+        'arguments' => $this->getCollection([
+          $this->getRaw($expected),
+        ]),
+        'arguments_count' => 1,
+      ]), $dump['services']['test']);
+    }
+
+    /**
+     * Data provider for testPercentsEscape().
+     *
+     * @return array[]
+     *   Returns data-set elements with:
+     *     - expected final value.
+     *     - escaped value in service definition.
+     */
+    public function percentsEscapeProvider() {
+      return [
+        ['%foo%', '%%foo%%'],
+        ['foo%bar%', 'foo%%bar%%'],
+        ['%foo%bar', '%%foo%%bar'],
+        ['%', '%'],
+        ['%', '%%'],
+        ['%%', '%%%'],
+        ['%%', '%%%%'],
+      ];
     }
 
     /**
@@ -637,6 +678,16 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
       ];
     }
 
+    /**
+     * Helper function to return a raw value definition.
+     */
+    protected function getRaw($value) {
+      return (object) [
+        'type' => 'raw',
+        'value' => $value,
+      ];
+    }
+
   }
 
 }
@@ -646,6 +697,7 @@ namespace Drupal\Tests\Component\DependencyInjection\Dumper {
  * define a dummy, else it cannot be tested.
  */
 namespace Symfony\Component\ExpressionLanguage {
+
   if (!class_exists('\Symfony\Component\ExpressionLanguage\Expression')) {
     /**
      * Dummy class to ensure non-existent Symfony component can be tested.

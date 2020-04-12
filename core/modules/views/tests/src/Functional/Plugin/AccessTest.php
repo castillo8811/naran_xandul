@@ -25,9 +25,14 @@ class AccessTest extends ViewTestBase {
   /**
    * Modules to enable.
    *
-   * @return array
+   * @var array
    */
   public static $modules = ['node'];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * Web user for testing.

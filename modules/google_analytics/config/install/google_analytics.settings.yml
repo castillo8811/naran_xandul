@@ -1,4 +1,5 @@
 account: ''
+premium: false
 domain_mode: 0
 cross_domains: ''
 visibility:
@@ -19,7 +20,7 @@ track:
   messages: {  }
   site_search: false
   adsense: false
-  displayfeatures: false
+  displayfeatures: true
 privacy:
   anonymizeip: true
 custom:

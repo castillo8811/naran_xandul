@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\views\Functional\Plugin;
 
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
@@ -9,7 +10,6 @@ use Drupal\Tests\views\Functional\ViewTestBase;
 use Drupal\views\Views;
 use Drupal\views_test_data\Plugin\views\argument_default\ArgumentDefaultTest as ArgumentDefaultTestPlugin;
 use Symfony\Component\HttpFoundation\Request;
-
 
 /**
  * Tests pluggable argument_default for views.
@@ -30,6 +30,11 @@ class ArgumentDefaultTest extends ViewTestBase {
     'test_argument_default_node',
     'test_argument_default_query_param',
     ];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * Modules to enable.
@@ -56,9 +61,9 @@ class ArgumentDefaultTest extends ViewTestBase {
     $options = [
       'default_argument_type' => 'argument_default_test',
       'default_argument_options' => [
-        'value' => 'John'
+        'value' => 'John',
       ],
-      'default_action' => 'default'
+      'default_action' => 'default',
     ];
     $id = $view->addHandler('default', 'argument', 'views_test_data', 'name', $options);
     $view->initHandlers();
@@ -82,7 +87,6 @@ class ArgumentDefaultTest extends ViewTestBase {
     $this->assertIdenticalResultset($view, $expected_result, ['views_test_data_name' => 'name']);
   }
 
-
   /**
    * Tests the use of a default argument plugin that provides no options.
    */
@@ -104,7 +108,7 @@ class ArgumentDefaultTest extends ViewTestBase {
       '%function' => 'views_handler_argument->validateOptionsForm()',
     ];
     $message = t('%type: @message in %function', $error);
-    $this->assertNoRaw($message, format_string('Did not find error message: @message.', ['@message' => $message]));
+    $this->assertNoRaw($message, new FormattableMarkup('Did not find error message: @message.', ['@message' => $message]));
   }
 
   /**
@@ -162,9 +166,9 @@ class ArgumentDefaultTest extends ViewTestBase {
     $this->drupalPlaceBlock("views_block:test_argument_default_node-block_1", ['id' => $id]);
     $xpath = '//*[@id="block-' . $id . '"]';
     $this->drupalGet('node/' . $node1->id());
-    $this->assertTrue(strpos($this->xpath($xpath)[0]->getText(), $node1->getTitle()));
+    $this->assertContains($node1->getTitle(), $this->xpath($xpath)[0]->getText());
     $this->drupalGet('node/' . $node2->id());
-    $this->assertTrue(strpos($this->xpath($xpath)[0]->getText(), $node2->getTitle()));
+    $this->assertContains($node2->getTitle(), $this->xpath($xpath)[0]->getText());
   }
 
   /**

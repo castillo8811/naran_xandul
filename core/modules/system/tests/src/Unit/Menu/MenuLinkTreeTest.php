@@ -32,11 +32,11 @@ class MenuLinkTreeTest extends UnitTestCase {
     parent::setUp();
 
     $this->menuLinkTree = new MenuLinkTree(
-      $this->getMock('\Drupal\Core\Menu\MenuTreeStorageInterface'),
-      $this->getMock('\Drupal\Core\Menu\MenuLinkManagerInterface'),
-      $this->getMock('\Drupal\Core\Routing\RouteProviderInterface'),
-      $this->getMock('\Drupal\Core\Menu\MenuActiveTrailInterface'),
-      $this->getMock('\Drupal\Core\Controller\ControllerResolverInterface')
+      $this->createMock('\Drupal\Core\Menu\MenuTreeStorageInterface'),
+      $this->createMock('\Drupal\Core\Menu\MenuLinkManagerInterface'),
+      $this->createMock('\Drupal\Core\Routing\RouteProviderInterface'),
+      $this->createMock('\Drupal\Core\Menu\MenuActiveTrailInterface'),
+      $this->createMock('\Drupal\Core\Controller\ControllerResolverInterface')
     );
 
     $cache_contexts_manager = $this->getMockBuilder('Drupal\Core\Cache\Context\CacheContextsManager')
@@ -134,10 +134,10 @@ class MenuLinkTreeTest extends UnitTestCase {
       '#theme' => 'menu__mock',
       '#items' => [
         // To be filled when generating test cases, using $get_built_element().
-      ]
+      ],
     ];
 
-    $get_built_element = function(MenuLinkTreeElement $element) {
+    $get_built_element = function (MenuLinkTreeElement $element) {
       $return = [
         'attributes' => new Attribute(),
         'title' => $element->link->getTitle(),
@@ -181,7 +181,6 @@ class MenuLinkTreeTest extends UnitTestCase {
         MenuLinkMock::create(['id' => 'test.example2', 'route_name' => 'example1', 'title' => 'Example 2', 'metadata' => ['cache_contexts' => ['bar']] + $cache_defaults]),
       ],
     ];
-
 
     $data = [];
 
@@ -249,10 +248,10 @@ class MenuLinkTreeTest extends UnitTestCase {
           new MenuLinkTreeElement($multi_level_root_a, TRUE, 0, FALSE, [
             new MenuLinkTreeElement($multi_level_parent_c, TRUE, 0, FALSE, [
               new MenuLinkTreeElement($links[0], FALSE, 0, FALSE, []),
-            ])
+            ]),
           ]),
           new MenuLinkTreeElement($multi_level_root_b, TRUE, 0, FALSE, [
-            new MenuLinkTreeElement($links[1], FALSE, 1, FALSE, [])
+            new MenuLinkTreeElement($links[1], FALSE, 1, FALSE, []),
           ]),
         ];
         $tree[0]->subtree[0]->subtree[0]->access = $access;

@@ -30,7 +30,6 @@ abstract class LinkitKernelTestBase extends KernelTestBase {
    */
   protected function setUp() {
     parent::setUp();
-    $this->installSchema('system', 'router');
     $this->installSchema('system', 'sequences');
     $this->installEntitySchema('user');
     $this->installConfig(['filter']);
@@ -51,7 +50,7 @@ abstract class LinkitKernelTestBase extends KernelTestBase {
     if ($permissions) {
       // Create a new role and apply permissions to it.
       $role = Role::create([
-        'id' => strtolower($this->randomMachineName(8)),
+        'id' => mb_strtolower($this->randomMachineName(8)),
         'label' => $this->randomMachineName(8),
       ]);
       $role->save();

@@ -116,7 +116,7 @@ class EntityTypeBundleInfoTest extends UnitTestCase {
     $class = $this->getMockClass(EntityInterface::class);
     foreach ($definitions as $key => $entity_type) {
       // \Drupal\Core\Entity\EntityTypeInterface::getLinkTemplates() is called
-      // by \Drupal\Core\Entity\EntityManager::processDefinition() so it must
+      // by \Drupal\Core\Entity\EntitTypeManager::processDefinition() so it must
       // always be mocked.
       $entity_type->getLinkTemplates()->willReturn([]);
 
@@ -136,7 +136,9 @@ class EntityTypeBundleInfoTest extends UnitTestCase {
         elseif (!$exception_on_invalid) {
           return NULL;
         }
-        else throw new PluginNotFoundException($entity_type_id);
+        else {
+          throw new PluginNotFoundException($entity_type_id);
+        }
       });
     $this->entityTypeManager->getDefinitions()->willReturn($definitions);
 

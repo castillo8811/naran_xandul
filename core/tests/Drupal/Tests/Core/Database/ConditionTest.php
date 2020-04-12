@@ -7,6 +7,7 @@ use Drupal\Core\Database\Query\Condition;
 use Drupal\Core\Database\Query\PlaceholderInterface;
 use Drupal\Tests\UnitTestCase;
 use Prophecy\Argument;
+use PHPUnit\Framework\Error\Error;
 
 /**
  * @coversDefaultClass \Drupal\Core\Database\Query\Condition
@@ -44,7 +45,7 @@ class ConditionTest extends UnitTestCase {
     $query_placeholder = $this->prophesize(PlaceholderInterface::class);
 
     $counter = 0;
-    $query_placeholder->nextPlaceholder()->will(function() use (&$counter) {
+    $query_placeholder->nextPlaceholder()->will(function () use (&$counter) {
       return $counter++;
     });
     $query_placeholder->uniqueIdentifier()->willReturn(4);
@@ -85,7 +86,7 @@ class ConditionTest extends UnitTestCase {
     $query_placeholder = $this->prophesize(PlaceholderInterface::class);
 
     $counter = 0;
-    $query_placeholder->nextPlaceholder()->will(function() use (&$counter) {
+    $query_placeholder->nextPlaceholder()->will(function () use (&$counter) {
       return $counter++;
     });
     $query_placeholder->uniqueIdentifier()->willReturn(4);
@@ -153,7 +154,7 @@ class ConditionTest extends UnitTestCase {
     $query_placeholder = $this->prophesize(PlaceholderInterface::class);
 
     $counter = 0;
-    $query_placeholder->nextPlaceholder()->will(function() use (&$counter) {
+    $query_placeholder->nextPlaceholder()->will(function () use (&$counter) {
       return $counter++;
     });
     $query_placeholder->uniqueIdentifier()->willReturn(4);
@@ -161,7 +162,7 @@ class ConditionTest extends UnitTestCase {
 
     $condition = new Condition('AND');
     $condition->condition('name', 'value', $operator);
-    $this->setExpectedException(\PHPUnit_Framework_Error::class);
+    $this->expectException(Error::class);
     $condition->compile($connection, $query_placeholder);
   }
 

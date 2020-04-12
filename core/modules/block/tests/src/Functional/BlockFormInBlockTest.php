@@ -5,7 +5,6 @@ namespace Drupal\Tests\block\Functional;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Tests\BrowserTestBase;
 
-
 /**
  * Tests form in block caching.
  *
@@ -19,6 +18,11 @@ class BlockFormInBlockTest extends BrowserTestBase {
    * @var array
    */
   public static $modules = ['block', 'block_test', 'test_page_test'];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'classy';
 
   /**
    * {@inheritdoc}

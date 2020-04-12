@@ -37,6 +37,11 @@ class EntityMatcher extends ConfigurableMatcherBase {
   use MatcherTokensTrait;
 
   /**
+   * The default limit for matches.
+   */
+  const DEFAULT_LIMIT = 100;
+
+  /**
    * The database connection.
    *
    * @var \Drupal\Core\Database\Connection
@@ -161,6 +166,12 @@ class EntityMatcher extends ConfigurableMatcherBase {
       $summery[] = $this->t('Group by bundle: @bundle_grouping', [
         '@bundle_grouping' => $this->configuration['group_by_bundle'] ? $this->t('Yes') : $this->t('No'),
       ]);
+
+      if (!empty($this->configuration['limit'])) {
+        $summery[] = $this->t('Limit: @limit', [
+          '@limit' => $this->configuration['limit'],
+        ]);
+      }
     }
 
     return $summery;
@@ -175,6 +186,7 @@ class EntityMatcher extends ConfigurableMatcherBase {
       'bundles' => [],
       'group_by_bundle' => FALSE,
       'substitution_type' => SubstitutionManagerInterface::DEFAULT_SUBSTITUTION,
+      'limit' => static::DEFAULT_LIMIT,
     ] + parent::defaultConfiguration();
   }
 
@@ -257,6 +269,25 @@ class EntityMatcher extends ConfigurableMatcherBase {
       '#description' => $this->t('Configure how the selected entity should be transformed into a URL for insertion.'),
     ];
 
+    $form['limit'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Limit'),
+      '#open' => TRUE,
+    ];
+
+    $form['limit']['limit'] = [
+      '#type' => 'select',
+      '#options' => [
+        0 => $this->t('Unlimited'),
+        20 => 20,
+        50 => 50,
+        100 => 100,
+        200 => 200,
+      ],
+      '#title' => $this->t('Limit search results'),
+      '#description' => $this->t('Limit the amount of results displayed when searching.'),
+      '#default_value' => $this->configuration['limit'],
+    ];
     return $form;
   }
 
@@ -274,6 +305,7 @@ class EntityMatcher extends ConfigurableMatcherBase {
     $this->configuration['bundles'] = $form_state->getValue('bundles');
     $this->configuration['group_by_bundle'] = $form_state->getValue('group_by_bundle');
     $this->configuration['substitution_type'] = $form_state->getValue('substitution_type');
+    $this->configuration['limit'] = $form_state->getValue('limit');
   }
 
   /**
@@ -305,6 +337,7 @@ class EntityMatcher extends ConfigurableMatcherBase {
       // Check the access against the defined entity access handler.
       /** @var \Drupal\Core\Access\AccessResultInterface $access */
       $access = $entity->access('view', $this->currentUser, TRUE);
+
       if (!$access->isAllowed()) {
         continue;
       }
@@ -352,6 +385,9 @@ class EntityMatcher extends ConfigurableMatcherBase {
       $query->condition($bundle_key, $this->configuration['bundles'], 'IN');
     }
 
+    if ($this->configuration['limit']) {
+      $query->range(0, $this->configuration['limit']);
+    }
     $this->addQueryTags($query);
 
     return $query;
@@ -415,7 +451,7 @@ class EntityMatcher extends ConfigurableMatcherBase {
    *   The matched entity.
    *
    * @return string
-   *    The metadata for this entity.
+   *   The metadata for this entity.
    */
   protected function buildDescription(EntityInterface $entity) {
     $description = \Drupal::token()->replace($this->configuration['metadata'], [$this->targetType => $entity], ['clear' => TRUE]);

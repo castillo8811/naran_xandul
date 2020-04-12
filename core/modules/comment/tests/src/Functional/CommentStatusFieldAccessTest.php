@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\comment\Functional;
 
-
 use Drupal\comment\Tests\CommentTestTrait;
 use Drupal\node\Entity\NodeType;
 use Drupal\Tests\BrowserTestBase;
@@ -20,6 +19,11 @@ class CommentStatusFieldAccessTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   public $profile = 'testing';
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * Comment admin.

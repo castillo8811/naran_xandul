@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\views_ui\Kernel;
 
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Tests\views\Kernel\ViewsKernelTestBase;
 use Drupal\views_ui\Controller\ViewsUIController;
 use Drupal\Component\Utility\Html;
@@ -52,14 +53,13 @@ class TagTest extends ViewsKernelTestBase {
       $this->assertTrue(in_array($match, $suggestions), 'Make sure the returned array has the proper format.');
     }
 
-
     // Make sure that matching by a certain prefix works.
     $request->query->set('q', 'autocomplete_tag_test_even');
     $result = $controller->autocompleteTag($request);
     $matches = (array) json_decode($result->getContent(), TRUE);
     $this->assertEqual(count($matches), 8, 'Make sure that only a subset is returned.');
     foreach ($matches as $tag) {
-      $this->assertTrue(array_search($tag['value'], $tags) !== FALSE, format_string('Make sure the returned tag @tag actually exists.', ['@tag' => $tag['value']]));
+      $this->assertTrue(array_search($tag['value'], $tags) !== FALSE, new FormattableMarkup('Make sure the returned tag @tag actually exists.', ['@tag' => $tag['value']]));
     }
 
     // Make sure an invalid result doesn't return anything.

@@ -13,8 +13,20 @@ class ClassLoaderTest extends BrowserTestBase {
 
   /**
    * The expected result from calling the module-provided class' method.
+   *
+   * @var string
    */
   protected $expected = 'Drupal\\module_autoload_test\\SomeClass::testMethod() was invoked.';
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $apcuEnsureUniquePrefix = TRUE;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * Tests that module-provided classes can be loaded when a module is enabled.

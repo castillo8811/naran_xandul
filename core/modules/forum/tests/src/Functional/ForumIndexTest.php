@@ -18,6 +18,11 @@ class ForumIndexTest extends BrowserTestBase {
    */
   public static $modules = ['taxonomy', 'comment', 'forum'];
 
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
+
   protected function setUp() {
     parent::setUp();
 
@@ -57,6 +62,8 @@ class ForumIndexTest extends BrowserTestBase {
       'parent[0]' => $tid,
     ];
     $this->drupalPostForm('admin/structure/forum/add/forum', $edit, t('Save'));
+    $this->assertSession()->linkExists(t('edit forum'));
+
     $tid_child = $tid + 1;
 
     // Verify that the node appears on the index.
@@ -68,7 +75,6 @@ class ForumIndexTest extends BrowserTestBase {
     $this->assertCacheTag('node:' . $node->id());
     $this->assertCacheTag('taxonomy_term:' . $tid);
     $this->assertCacheTag('taxonomy_term:' . $tid_child);
-
 
     // Unpublish the node.
     $edit = ['status[value]' => FALSE];

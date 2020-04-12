@@ -34,7 +34,7 @@
  * https://www.drupal.org/docs/8/theming
  *
  * For further Twig documentation see
- * http://twig.sensiolabs.org/doc/templates.html
+ * https://twig.symfony.com/doc/1.x/templates.html
  *
  * @section sec_theme_hooks Theme Hooks
  * The theme system is invoked in \Drupal\Core\Render\Renderer::doRender() by
@@ -364,7 +364,7 @@
  *   '#cache' => [
  *     'keys' => ['entity_view', 'node', $node->id()],
  *     'contexts' => ['languages'],
- *     'tags' => ['node:' . $node->id()],
+ *     'tags' => $node->getCacheTags(),
  *     'max-age' => Cache::PERMANENT,
  *   ],
  * @endcode
@@ -613,6 +613,10 @@ function hook_preprocess_HOOK(&$variables) {
  * hook called (in this case 'node__article') is available in
  * $variables['theme_hook_original'].
  *
+ * Implementations of this hook must be placed in *.module or *.theme files, or
+ * must otherwise make sure that the hook implementation is available at
+ * any given time.
+ *
  * @todo Add @code sample.
  *
  * @param array $variables
@@ -694,6 +698,10 @@ function hook_theme_suggestions_alter(array &$suggestions, array $variables, $ho
  * hook called (in this case 'node__article') is available in
  * $variables['theme_hook_original'].
  *
+ * Implementations of this hook must be placed in *.module or *.theme files, or
+ * must otherwise make sure that the hook implementation is available at
+ * any given time.
+ *
  * @todo Add @code sample.
  *
  * @param array $suggestions
@@ -707,7 +715,7 @@ function hook_theme_suggestions_alter(array &$suggestions, array $variables, $ho
  */
 function hook_theme_suggestions_HOOK_alter(array &$suggestions, array $variables) {
   if (empty($variables['header'])) {
-    $suggestions[] = 'hookname__' . 'no_header';
+    $suggestions[] = 'hookname__no_header';
   }
 }
 
@@ -717,7 +725,7 @@ function hook_theme_suggestions_HOOK_alter(array &$suggestions, array $variables
  * @param array $theme_list
  *   Array containing the names of the themes being installed.
  *
- * @see \Drupal\Core\Extension\ThemeHandler::install()
+ * @see \Drupal\Core\Extension\ThemeInstallerInterface::install()
  */
 function hook_themes_installed($theme_list) {
   foreach ($theme_list as $theme) {
@@ -731,7 +739,7 @@ function hook_themes_installed($theme_list) {
  * @param array $themes
  *   Array containing the names of the themes being uninstalled.
  *
- * @see \Drupal\Core\Extension\ThemeHandler::uninstall()
+ * @see \Drupal\Core\Extension\ThemeInstallerInterface::uninstall()
  */
 function hook_themes_uninstalled(array $themes) {
   // Remove some state entries depending on the theme.
@@ -756,6 +764,12 @@ function hook_extension() {
 
 /**
  * Render a template using the theme engine.
+ *
+ * It is the theme engine's responsibility to escape variables. The only
+ * exception is if a variable implements
+ * \Drupal\Component\Render\MarkupInterface. Drupal is inherently unsafe if
+ * other variables are not escaped. The helper function
+ * theme_render_and_autoescape() may be used for this.
  *
  * @param string $template_file
  *   The path (relative to the Drupal root directory) to the template to be
@@ -794,6 +808,24 @@ function hook_element_info_alter(array &$info) {
   if (isset($info['textfield']['#size'])) {
     $info['textfield']['#size'] = 40;
   }
+}
+
+/**
+ * Alter Element plugin definitions.
+ *
+ * Whenever possible, hook_element_info_alter() should be used to alter the
+ * default properties of an element type. Use this hook only when the plugin
+ * definition itself needs to be altered.
+ *
+ * @param array $definitions
+ *   An array of Element plugin definitions.
+ *
+ * @see \Drupal\Core\Render\ElementInfoManager
+ * @see \Drupal\Core\Render\Element\ElementInterface
+ */
+function hook_element_plugin_alter(array &$definitions) {
+  // Use a custom class for the LayoutBuilder element.
+  $definitions['layout_builder']['class'] = '\Drupal\mymodule\Element\MyLayoutBuilderElement';
 }
 
 /**
@@ -1008,7 +1040,7 @@ function hook_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $asset
  */
 function hook_page_attachments(array &$attachments) {
   // Unconditionally attach an asset to the page.
-  $attachments['#attached']['library'][] = 'core/domready';
+  $attachments['#attached']['library'][] = 'core/drupalSettings';
 
   // Conditionally attach an asset to the page.
   if (!\Drupal::currentUser()->hasPermission('may pet kittens')) {

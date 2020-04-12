@@ -3,19 +3,24 @@
 namespace Drupal\Tests\block\FunctionalJavascript;
 
 use Behat\Mink\Element\NodeElement;
-use Drupal\FunctionalJavascriptTests\JavascriptTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 
 /**
  * Tests the JavaScript functionality of the block add filter.
  *
  * @group block
  */
-class BlockFilterTest extends JavascriptTestBase {
+class BlockFilterTest extends WebDriverTestBase {
 
   /**
    * {@inheritdoc}
    */
   public static $modules = ['user', 'block'];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * {@inheritdoc}
@@ -78,13 +83,13 @@ class BlockFilterTest extends JavascriptTestBase {
   /**
    * Removes any non-visible elements from the passed array.
    *
-   * @param NodeElement[] $elements
+   * @param \Behat\Mink\Element\NodeElement[] $elements
    *   An array of node elements.
    *
-   * @return NodeElement[]
+   * @return \Behat\Mink\Element\NodeElement[]
    */
   protected function filterVisibleElements(array $elements) {
-    $elements = array_filter($elements, function(NodeElement $element) {
+    $elements = array_filter($elements, function (NodeElement $element) {
       return $element->isVisible();
     });
     return $elements;

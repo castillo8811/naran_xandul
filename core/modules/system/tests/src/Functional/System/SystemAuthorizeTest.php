@@ -18,11 +18,16 @@ class SystemAuthorizeTest extends BrowserTestBase {
    */
   public static $modules = ['system_test'];
 
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
+
   protected function setUp() {
     parent::setUp();
 
     // Create an administrator user.
-    $this->drupalLogin ($this->drupalCreateUser(['administer software updates']));
+    $this->drupalLogin($this->drupalCreateUser(['administer software updates']));
   }
 
   /**
